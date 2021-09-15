@@ -11,7 +11,7 @@ class SendEmailVerificationNotification
 {
 
     use InteractsWithQueue;
-    
+
     /**
      * Create the event listener.
      *

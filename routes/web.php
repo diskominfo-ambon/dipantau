@@ -19,6 +19,10 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/',  fn () => Redirect::route('login'));
 
-Auth::routes();
+Auth::routes([
+    'verify' => true
+]);
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])
+    ->middleware('verified')
+    ->name('home');

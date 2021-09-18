@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -60,5 +61,13 @@ class LoginController extends Controller
             $key => ucfirst($key), // Field key to uppercase.
             'password' => 'Password'
         ]);
+    }
+
+    public function redirectTo(): string
+    {
+        if (Auth::user()->hasRole('user')) return '/u';
+
+        // if is user role has admins.
+        return '/a';
     }
 }

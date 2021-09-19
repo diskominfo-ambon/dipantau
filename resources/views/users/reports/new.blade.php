@@ -106,7 +106,7 @@
         </div><!-- .buysell -->
     </div>
     <div class="col-md-5">
-        <div class="sticky-top" style="top: 80px;">
+        <div class="sticky-top" style="top: 80px; z-index: 0;">
             <a class="btn btn-light text-secondary border">Tambahkan<em class="icon ni ni-clock ml-1"></em> </a>
             <small class="d-block mt-1 text-gray">
                 <em>(Opsional)</em> Anda dapat menambahkan laporan waktu pemantauan sesuai kondisi. <a href="#">Baca lebih lanjut apa itu laporan waktu pemantauan.</a>

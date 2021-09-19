@@ -37,7 +37,7 @@
                     </ul>
                     <div class="user-account-actions">
                         @if ($user->hasRole('user'))
-                            <a href="#" class="btn btn-lg btn-primary d-flex justify-content-center align-content-center">
+                            <a href="{{ route('users.reports.create') }}" class="btn btn-lg btn-primary d-flex justify-content-center align-content-center">
                                 <em class="icon ni ni-note-add-c"></em>
                                 <span>Buat laporan</span>
                             </a>

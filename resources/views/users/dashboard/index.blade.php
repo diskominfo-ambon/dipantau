@@ -104,10 +104,9 @@
                                 <div class="badge-overflow__item">Halo batak 3</div>
                                 <div class="badge-overflow__item">Halo amerika 4</div>
                                 <div class="badge-overflow__item">Halo japan 5</div>
+
                                 <div class="badge-overflow__item">Halo hongkong 1</div>
                                 <div class="badge-overflow__item">Halo dunia 2</div>
-                                <div class="badge-overflow__item">Halo dunia 3</div>
-                                <div class="badge-overflow__item">Halo amerika 4</div>
                             </div>
                         </div>
                     </div>

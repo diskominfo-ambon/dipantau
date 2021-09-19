@@ -1,0 +1,18 @@
+.font {
+    &-nunito {
+        font-family: Nunito, sans-serif;
+    }
+}
+.form-control-wrap.form-select-lg {
+    .select2 {
+        &-selection {
+            height: 4rem !important;
+            display: flex;
+            align-items: center;
+
+            &__arrow {
+                top: 10px;
+            }
+        }
+    }
+}

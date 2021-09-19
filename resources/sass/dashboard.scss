@@ -5,7 +5,7 @@
 
 
 @keyframes scroll-top {
-    100% { top: -100px; }
+    100% { top: -160px; }
 }
 
 .badge-overflow {
@@ -19,7 +19,8 @@
         flex-wrap: wrap;
         position: absolute;
         top:0;
-        animation: scroll-top 3s linear 1s infinite alternate;
+        transform: skewY(-5deg);
+        animation: scroll-top 3s linear 1s infinite;
     }
     &__item {
         background-color: $dim-blue;
@@ -62,5 +63,93 @@
 
     &-balance {
         font-family: Nunito,sans-serif;
+    }
+}
+.buysell-pm {
+    &-list {
+        display: flex;
+        align-items: center;
+        overflow-y: hidden;
+        overflow-x: scroll;
+    }
+
+    &-item {
+        flex-grow: 1;
+        flex-shrink: 0;
+        border: none !important;
+        font-family: Nunito,sans-serif;
+        font-weight: 600;
+    }
+}
+
+.form-control-number {
+    padding: .62rem 1.52rem !important;
+    height: 4rem !important;
+}
+textarea.form-control-number {
+    padding: .62rem 1.52rem !important;
+    min-height: 4rem;
+    font-size: 20px !important;
+}
+
+.upload-box {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &__field {
+        cursor: pointer;
+
+        &:hover {
+            background-color: $dim-blue;
+            border-color: $dim-blue-dark;
+        }
+    }
+
+    &__item {
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $light-gray;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 9.5rem;
+        width: 8rem;
+
+        .icon {
+            background-color: $light;
+            height: 3.125rem;
+            width: 3.125rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.list-report-times {
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        span {
+            font-size: .8rem;
+            font-family: Nunito,sans-serif;
+            font-weight: 600;
+        }
+
+        .badge {
+            &-sm {
+                padding: .2rem .80rem;
+                font-size: .80rem;
+            }
+        }
     }
 }

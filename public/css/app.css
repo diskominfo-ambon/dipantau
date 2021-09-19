@@ -10002,3 +10002,15 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.font-nunito {
+  font-family: Nunito, sans-serif;
+}
+
+.form-control-wrap.form-select-lg .select2-selection {
+  height: 4rem !important;
+  display: flex;
+  align-items: center;
+}
+.form-control-wrap.form-select-lg .select2-selection__arrow {
+  top: 10px;
+}

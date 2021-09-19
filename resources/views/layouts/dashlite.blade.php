@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
 
     @yield('head')
-    @livewireStyles
+    {{-- @livewireStyles --}}
 
 </head>
 <body class="nk-body bg-white has-sidebar">
@@ -44,7 +44,7 @@
     </div>
     <!-- app-root -->
     <!-- JavaScript -->
-    @livewireScripts
+    {{-- @livewireScripts --}}
     <script src="{{ asset('vendor/dashlite/js/bundle.js') }}"></script>
     <script src="{{ asset('vendor/dashlite/js/scripts.js') }}"></script>
     @yield('script')

@@ -14,16 +14,17 @@ use App\Http\Controllers\Users\ReportsController;
 | Rute role:users yang terdaftar dengan middleware ["web", "verified", "auth"].
 */
 
-Route::group(['prefix' => 'u'], function () {
+Route::prefix('u')->name('users.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])
-        ->name('users.dashboard');
+        ->name('dashboard');
 
 
-    Route::resource('/{username}', ProfilesController::class);
-    Route::resource('/todos', TodosController::class);
-
-    Route::resource('/reports', ReportsController::class)
+    Route::resource('todos', TodosController::class);
+    Route::resource('reports', ReportsController::class)
         ->except(['index']);
+
+    Route::resource('me', ProfilesController::class);
+
 
     // TODO: followings & followers, feed dashboard, fork reports.
 

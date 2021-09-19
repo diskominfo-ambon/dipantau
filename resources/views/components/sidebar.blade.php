@@ -64,7 +64,6 @@
                         <div class="user-account-info between-center">
                             <div class="user-account-main">
                                 <h6 class="text-secondary">👋 Hai Azman Abdullah</h6>
-                                <h6 class="text-gray">@azmanabdlh</h6>
                             </div>
                         </div>
                         <ul class="user-account-data">
@@ -82,7 +81,12 @@
                             <li><a href="#"><em class="icon ni ni-user-fill"></em><span>Profil saya</span></a></li>
                         </ul>
                         <ul class="link-list">
-                            <li><a href="#"><em class="icon ni ni-signout"></em><span>Keluar</span></a></li>
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button class="btn btn-white btn-block"><em class="icon ni ni-signout" style="margin-left: -12px; display: inline-block;"></em><span>Keluar</span></button>
+                                </form>
+                            </li>
                         </ul>
                     </div>
                 </div><!-- .nk-sidebar-widget -->

@@ -13,5 +13,7 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
-.*_.*
-/.*_.*
+._.*
+._*
+/._.*
+/._*

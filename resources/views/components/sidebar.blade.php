@@ -21,33 +21,26 @@
                 <div class="nk-sidebar-widget d-none d-xl-block">
                     <div class="user-account-info between-center">
                         <div class="user-account-main">
-                            <h6 class="overline-title-alt">Available Balance</h6>
-                            <div class="user-balance">2.014095 <small class="currency currency-btc">BTC</small></div>
-                            <div class="user-balance-alt">18,934.84 <span class="currency currency-btc">BTC</span></div>
+                            <h6 class="text-secondary">👋 Hai Azman Abdullah</h6>
+                            <h6 class="text-gray">@azmanabdlh</h6>
                         </div>
                     </div>
-                    <ul class="user-account-data gy-1">
-                        <li>
+                    <ul class="user-account-data">
+                        <li class="mb-2">
                             <div class="user-account-label">
-                                <span class="sub-text">Profits (7d)</span>
+                                <h6 class="sub-text">👨🏻‍💻 Aktivitas terakhir</h6>
                             </div>
                             <div class="user-account-value">
-                                <span class="lead-text">+ 0.0526 <span class="currency currency-btc">BTC</span></span>
-                                <span class="text-success ml-2">3.1% <em class="icon ni ni-arrow-long-up"></em></span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="user-account-label">
-                                <span class="sub-text">Deposit in orders</span>
-                            </div>
-                            <div class="user-account-value">
-                                <span class="sub-text">0.005400 <span class="currency currency-btc">BTC</span></span>
+                                <h6 class="sub-text text-base">28 Jam yang lalu</h6>
                             </div>
                         </li>
                     </ul>
                     <div class="user-account-actions">
                         @if ($user->hasRole('user'))
-                            <a href="#" class="btn btn-lg btn-primary"><span>Deposit</span></a>
+                            <a href="#" class="btn btn-lg btn-primary d-flex justify-content-center align-content-center">
+                                <em class="icon ni ni-note-add-c"></em>
+                                <span>Buat laporan</span>
+                            </a>
                         @endif
                     </div>
                 </div><!-- .nk-sidebar-widget -->
@@ -71,42 +64,26 @@
                     <div class="nk-profile-content toggle-expand-content" data-content="sidebarProfile">
                         <div class="user-account-info between-center">
                             <div class="user-account-main">
-                                <h6 class="overline-title-alt">Available Balance</h6>
-                                <div class="user-balance">2.014095 <small class="currency currency-btc">BTC</small></div>
-                                <div class="user-balance-alt">18,934.84 <span class="currency currency-btc">BTC</span></div>
+                                <h6 class="text-secondary">👋 Hai Azman Abdullah</h6>
+                                <h6 class="text-gray">@azmanabdlh</h6>
                             </div>
-                            <a href="#" class="btn btn-icon btn-light"><em class="icon ni ni-line-chart"></em></a>
                         </div>
                         <ul class="user-account-data">
-                            <li>
+                            <li class="mb-2">
                                 <div class="user-account-label">
-                                    <span class="sub-text">Profits (7d)</span>
+                                    <h6 class="sub-text">👨🏻‍💻 Aktivitas terakhir</h6>
                                 </div>
                                 <div class="user-account-value">
-                                    <span class="lead-text">+ 0.0526 <span class="currency currency-btc">BTC</span></span>
-                                    <span class="text-success ml-2">3.1% <em class="icon ni ni-arrow-long-up"></em></span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="user-account-label">
-                                    <span class="sub-text">Deposit in orders</span>
-                                </div>
-                                <div class="user-account-value">
-                                    <span class="sub-text text-base">0.005400 <span class="currency currency-btc">BTC</span></span>
+                                    <h6 class="sub-text text-base">28 Jam yang lalu</h6>
                                 </div>
                             </li>
                         </ul>
-                        <ul class="user-account-links">
-                            <li><a href="#" class="link"><span>Withdraw Funds</span> <em class="icon ni ni-wallet-out"></em></a></li>
-                            <li><a href="#" class="link"><span>Deposit Funds</span> <em class="icon ni ni-wallet-in"></em></a></li>
+
+                        <ul class="link-list">
+                            <li><a href="#"><em class="icon ni ni-user-fill"></em><span>Profil saya</span></a></li>
                         </ul>
                         <ul class="link-list">
-                            <li><a href="html/crypto/profile.html"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
-                            <li><a href="html/crypto/profile-security.html"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
-                            <li><a href="html/crypto/profile-activity.html"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
-                        </ul>
-                        <ul class="link-list">
-                            <li><a href="#"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
+                            <li><a href="#"><em class="icon ni ni-signout"></em><span>Keluar</span></a></li>
                         </ul>
                     </div>
                 </div><!-- .nk-sidebar-widget -->
@@ -117,9 +94,14 @@
                             <h6 class="overline-title">Menu</h6>
                         </li>
                         <li class="nk-menu-item">
-                            <x-anchor text="Dashboard"/>
+                            <x-anchor text="Dashboard" icon="ni-dashboard-fill"/>
                         </li>
-
+                        <li class="nk-menu-item">
+                            <x-anchor text="Feeds" icon="ni-list-thumb-fill"/>
+                        </li>
+                        <li class="nk-menu-item">
+                            <x-anchor text="To do" icon="ni ni-masonry-fill"/>
+                        </li>
                     </ul><!-- .nk-menu -->
                 </div><!-- .nk-sidebar-menu -->
 

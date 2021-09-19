@@ -35,7 +35,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <div class="user-toggle">
                                 <div class="user-avatar sm">
-                                    <em class="icon ni ni-user-alt"></em>
+                                    <em class="icon ni ni-user-fill"></em>
                                 </div>
                                 <div class="user-info d-none d-md-block">
                                     <div class="user-status user-status-unverified">Pengguna</div>
@@ -47,7 +47,7 @@
                             <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
                                 <div class="user-card">
                                     <div class="user-avatar">
-                                        <span>AB</span>
+                                        <em class="icon ni ni-user-fill"></em>
                                     </div>
                                     <div class="user-info">
                                         <span class="lead-text">{{ str($user->name)->title()->limit(22) }}</span>
@@ -55,35 +55,26 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="dropdown-inner user-account-info">
-                                <h6 class="overline-title-alt">Nio Wallet Account</h6>
-                                <div class="user-balance">12.395769 <small class="currency currency-btc">BTC</small></div>
-                                <div class="user-balance-sub">Locked <span>0.344939 <span class="currency currency-btc">BTC</span></span></div>
-                                <a href="#" class="link"><span>Withdraw Funds</span> <em class="icon ni ni-wallet-out"></em></a>
-                            </div>
                             <div class="dropdown-inner">
                                 <ul class="link-list">
-                                    <li><a href="html/crypto/profile.html"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
-                                    <li><a href="html/crypto/profile-security.html"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
-                                    <li><a href="html/crypto/profile-activity.html"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
+                                    <li><a href="#"><em class="icon ni ni-user-fill"></em><span>Profile saya</span></a></li>
                                     <li><a class="dark-switch" href="#"><em class="icon ni ni-moon"></em><span>Dark Mode</span></a></li>
                                 </ul>
                             </div>
                             <div class="dropdown-inner">
                                 <ul class="link-list">
-                                    <li><a href="#"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
+                                    <li><a href="#"><em class="icon ni ni-signout"></em><span>Keluar</span></a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
                     <li class="dropdown notification-dropdown mr-n1">
                         <a href="#" class="dropdown-toggle nk-quick-nav-icon" data-toggle="dropdown">
-                            <div class="icon-status icon-status-info"><em class="icon ni ni-bell"></em></div>
+                            <div class="icon-status icon-status-info"><em class="icon ni ni-bell-fill"></em></div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right dropdown-menu-s1">
                             <div class="dropdown-head">
-                                <span class="sub-title nk-dropdown-title">Notifications</span>
-                                <a href="#">Mark All as Read</a>
+                                <span class="sub-title nk-dropdown-title">Pemberitahuan</span>
                             </div>
                             <div class="dropdown-body">
                                 <div class="nk-notification">
@@ -144,7 +135,7 @@
                                 </div>
                             </div><!-- .nk-dropdown-body -->
                             <div class="dropdown-foot center">
-                                <a href="#">View All</a>
+                                <a href="#">Muat lebih</a>
                             </div>
                         </div>
                     </li>

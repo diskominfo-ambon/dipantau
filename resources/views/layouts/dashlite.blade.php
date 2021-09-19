@@ -8,7 +8,9 @@
     <!-- Page Title  -->
     <title>@yield('title', 'Dashboard')</title>
     <!-- StyleSheets  -->
+    <link rel="prefetch" href="{{ asset('vendor/dashlite/css/dashlite.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/dashlite/css/dashlite.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
 
     @yield('head')
     @livewireStyles
@@ -23,7 +25,15 @@
             <div class="nk-wrap ">
                 <x-header />
                 <!-- content -->
-                @yield('content')
+                <div class="nk-content nk-content-fluid">
+                    <div class="container-xl wide-lg">
+                        <div class="nk-content-body">
+                            @yield('breadcrumb')
+
+                            @yield('content')
+                        </div>
+                    </div>
+                </div>
                 <!-- content -->
 
                 <x-footer/>

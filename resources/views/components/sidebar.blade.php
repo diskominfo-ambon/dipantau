@@ -97,10 +97,10 @@
                             <x-anchor text="Dashboard" icon="ni-dashboard-fill"/>
                         </li>
                         <li class="nk-menu-item">
-                            <x-anchor text="Feeds" icon="ni-list-thumb-fill"/>
+                            <x-anchor text="Feeds" icon="ni-masonry-fill"/>
                         </li>
                         <li class="nk-menu-item">
-                            <x-anchor text="To do" icon="ni ni-masonry-fill"/>
+                            <x-anchor text="To do" icon="ni ni-list-thumb-fill"/>
                         </li>
                     </ul><!-- .nk-menu -->
                 </div><!-- .nk-sidebar-menu -->

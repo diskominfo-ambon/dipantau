@@ -7,7 +7,7 @@
     <div class="nk-block-head-sub"><span>Dashboard</span> </div>
     <div class="nk-block-between-md g-4">
         <div class="nk-block-head-content">
-            <h2 class="nk-block-title fw-normal">Saya / Dashboard</h2>
+            <h2 class="nk-block-title fw-normal">@azmanabdlh / Dashboard</h2>
             <div class="nk-block-des">
                 <p>Berikut semua daftar aset pengunaan Anda!</p>
             </div>

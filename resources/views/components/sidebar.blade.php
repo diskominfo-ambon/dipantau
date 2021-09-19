@@ -22,7 +22,6 @@
                     <div class="user-account-info between-center">
                         <div class="user-account-main">
                             <h6 class="text-secondary">👋 Hai Azman Abdullah</h6>
-                            <h6 class="text-gray">@azmanabdlh</h6>
                         </div>
                     </div>
                     <ul class="user-account-data">
@@ -94,13 +93,13 @@
                             <h6 class="overline-title">Menu</h6>
                         </li>
                         <li class="nk-menu-item">
-                            <x-anchor text="Dashboard" icon="ni-dashboard-fill"/>
+                            <x-anchor text="Dashboard" to="{{ route('users.dashboard') }}" icon="ni-dashboard-fill"/>
                         </li>
                         <li class="nk-menu-item">
                             <x-anchor text="Feeds" icon="ni-masonry-fill"/>
                         </li>
                         <li class="nk-menu-item">
-                            <x-anchor text="To do" icon="ni ni-list-thumb-fill"/>
+                            <x-anchor text="To do" to="{{ route('users.todos.index') }}" icon="ni ni-list-thumb-fill"/>
                         </li>
                     </ul><!-- .nk-menu -->
                 </div><!-- .nk-sidebar-menu -->

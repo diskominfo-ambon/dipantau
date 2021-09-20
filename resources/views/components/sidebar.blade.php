@@ -77,8 +77,17 @@
                             </li>
                         </ul>
 
+                      
                         <ul class="link-list">
                             <li><a href="#"><em class="icon ni ni-user-fill"></em><span>Profil saya</span></a></li>
+                            @if ($user->hasRole('user'))
+                            <li>
+                                <a href="#">
+                                    <em class="icon ni ni-note-add-fill-c"></em>
+                                    <span>Buat laporan</span>
+                                </a>
+                            </li>
+                            @endif
                         </ul>
                         <ul class="link-list">
                             <li>

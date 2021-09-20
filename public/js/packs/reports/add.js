@@ -471,7 +471,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"/js/add": 0,
+/******/ 			"/js/packs/reports/add": 0,
 /******/ 			"css/app": 0,
 /******/ 			"css/dashboard": 0
 /******/ 		};

@@ -59,12 +59,8 @@
     <uploader>
       endpoint=""
       v-slot="{ onInput, progress, isLoading, files, onClick, errors }">
-      <div class="upload-box">
-        <div class="upload-box__field upload-box__item">
-          <em class="icon ni ni-plus-c"></em>
-        </div>
-        <input type="file" class="d-none" />
-      </div>
+      <uploadarea-input
+        :disabled="isLoading" @input="onInput"/>
     </uploader>
 
     <div class="form-note-group">
@@ -84,6 +80,7 @@ import TextInput from '~/components/inputs/text-input';
 import CheckboxFields from '~/components/inputs/checkbox-fields';
 import CheckboxInput from '~/components/inputs/checkbox-input';
 import Uploader from '~/components/uploader';
+import UploadboxInput from '~/components/inputs/uploadbox-input';
 
 export default defineComponent({
   props: {
@@ -96,6 +93,7 @@ export default defineComponent({
     CheckboxInput,
     CheckboxFields,
     Uploader,
+    UploadboxInput
   },
   setup() {}
 });

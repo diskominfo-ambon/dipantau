@@ -9,95 +9,7 @@
       </div><!-- .buysell-title -->
       <div class="buysell-block">
         <form action="#" class="buysell-form">
-          <div class="buysell-field form-group">
-            <div class="form-label-group">
-              <label class="form-label">Judul</label>
-            </div>
-            <input type="text" name="title" autocomplete="off" autofocus required placeholder="Contoh: Pemantuan lokasi ...." class="form-control form-control-lg form-control-number">
-            <div class="form-note-group">
-              <span class="form-note-alt">Pasktikan menggunakan judul yang jelas untuk kemudahan pencarian.</span>
-            </div>
-          </div>
-          <div class="buysell-field form-group">
-            <div class="form-label-group">
-              <label for="" class="form-label">Lokasi CCTV</label>
-            </div>
-            <div class="form-control-wrap form-select-lg">
-              <select name=""  data-search="on" data-ui="lg" class="form-select form-select-lg form-control form-control-lg form-control-number">
-                <option value="abdullalie">CCTV Pertigaan Abdulallie</option>
-              </select>
-            </div>
-          </div>
-          <div class="buysell-field form-group mt-5">
-            <div class="form-label-group">
-              <label class="form-label">Kategori</label>
-            </div>
-            <div class="form-pm-group">
-              <ul class="buysell-pm-list">
-                <li class="buysell-pm-item">
-                  <input class="buysell-pm-control" type="checkbox" name="bs-method" id="pm-paypal" />
-                  <label class="buysell-pm-label" for="pm-paypal">
-                    <span class="pm-name">Lalu lintas</span>
-                  </label>
-                </li>
-                <li class="buysell-pm-item">
-                  <input class="buysell-pm-control" type="checkbox" name="bs-method" id="pm-bank" />
-                  <label class="buysell-pm-label" for="pm-bank">
-                    <span class="pm-name">Sampah</span>
-                  </label>
-                </li>
-                <li class="buysell-pm-item">
-                  <input class="buysell-pm-control" type="checkbox" name="bs-method" id="pm-card" />
-                  <label class="buysell-pm-label" for="pm-card">
-                    <span class="pm-name">Sungai</span>
-                  </label>
-                </li>
-                <li class="buysell-pm-item">
-                  <input class="buysell-pm-control" type="checkbox" name="bs-method" id="pm-card" />
-                  <label class="buysell-pm-label" for="pm-card">
-                    <span class="pm-name">Bendungan</span>
-                  </label>
-                </li>
-                <li class="buysell-pm-item">
-                  <input class="buysell-pm-control" type="checkbox" name="bs-method" id="pm-card" />
-                  <label class="buysell-pm-label" for="pm-card">
-                    <span class="pm-name">Taman</span>
-                  </label>
-                </li>
-              </ul>
-              <div class="form-note-group">
-                <span class="form-note-alt">Laporan dapat memiliki lebih dari satu ketegori pemantauan.</span>
-              </div>
-            </div>
-          </div><!-- .buysell-field -->
-          <div class="buysell-field form-group">
-            <div class="form-label-group">
-              <label class="form-label">Deskripsi</label>
-            </div>
-            <textarea placeholder="......" name="description" id="description" required autofocus autocomplete="off" class="form-control form-control-lg form-control-number"></textarea>
-            <div class="form-note-group">
-              <span class="form-note-alt">
-                Masukan informasi lengkap tentang pemantauan (masalah & solusi).
-              </span>
-            </div>
-          </div><!-- .buysell-field -->
 
-          <div class="buysell-field form-group">
-            <div class="form-label-group">
-              <label for="" class="form-label">Upload berkas</label>
-            </div>
-            <div class="upload-box">
-                <div  class="upload-box__field upload-box__item">
-                    <em class="icon ni ni-plus-c"></em>
-                </div>
-                <input type="file" class="d-none" />
-            </div>
-            <div class="form-note-group">
-              <span class="form-note-alt">
-                Upload berkas laporan Anda, format yang disahkan <strong>pdf</strong> dan memiliki max <strong>5mb</strong>.
-              </span>
-            </div>
-          </div>
           <div class="buysell-field form-action">
             <a href="#" class="btn btn-lg btn-block btn-primary w-auto" data-toggle="modal" data-target="#buy-coin"><em class="icon ni ni-note-add-fill-c mr-1"></em> Tambahkan laporan</a>
           </div><!-- .buysell-field -->
@@ -139,15 +51,24 @@
 @verbatim
 <div id="app">
   <h1>Form</h1>
-
+  <!-- modal -->
+  <div class="modal">
+    <form method="post">
+      <report-time-fields
+        v-model="form"
+        submit-text="Tambahkan"
+      />
+    <form>
+  </div>
+  <!-- end -->
   <form method="POST" action="" @submit.prevent="handleOnSubmit">
 
-    <report-fields
+    <report-daily-fields
       v-model="form"
       submit-text="Tambahkan"
     />
-
   </form>
+
 
 </div>
 @endverbatim

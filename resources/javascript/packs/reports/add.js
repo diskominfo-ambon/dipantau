@@ -11,16 +11,15 @@ createApp({
   },
   setup() {
 
-  const form = useForm({});
+    const form = useForm({});
+
+    function handleOnSubmit() {}
 
 
-  function handleOnSubmit() {}
-
-
-  return {
-    handleOnSubmit,
-    form
-  };
+    return {
+      handleOnSubmit,
+      form
+    };
 
   }
 }).mount('#app');

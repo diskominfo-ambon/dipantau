@@ -9,7 +9,6 @@
       </div><!-- .buysell-title -->
       <div class="buysell-block">
         <form action="#" class="buysell-form">
-
           <div class="buysell-field form-action">
             <a href="#" class="btn btn-lg btn-block btn-primary w-auto" data-toggle="modal" data-target="#buy-coin"><em class="icon ni ni-note-add-fill-c mr-1"></em> Tambahkan laporan</a>
           </div><!-- .buysell-field -->
@@ -66,6 +65,7 @@
       v-model="form"
       submit-text="Tambahkan"
     />
+
   </form>
 
 

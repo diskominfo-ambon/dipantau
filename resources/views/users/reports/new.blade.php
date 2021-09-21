@@ -50,7 +50,6 @@
 
 @verbatim
 <div id="app">
-  <h1>Form</h1>
   <!-- modal -->
   <div class="modal">
     <form method="post">
@@ -77,22 +76,4 @@
 
 @section('head')
 <script defer src="{{ asset('js/add.js') }}"></script>
-@endsection
-
-@section('script')
-<script>
-  $(document).ready(main);
-
-
-  function main() {
-    // Auto-resize text input [textarea] description.
-    $('#description').on('input', function (e) {
-      const target = e.target;
-      target.setAttribute('style', 'height: auto;');
-      target.setAttribute('style', `height: ${target.scrollHeight}px !important;`);
-
-      console.log(target.scrollHeight);
-    });
-  }
-</script>
 @endsection

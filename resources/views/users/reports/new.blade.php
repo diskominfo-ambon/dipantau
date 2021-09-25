@@ -12,7 +12,8 @@
           <form class="buysell-form" method="POST" action="" @submit.prevent="handleOnSubmit">
             @verbatim
 
-            <h1>Halo dunia</h1>
+            <h1>Halo {{ form.name }}</h1>
+
             <!-- submit -->
             <div class="buysell-field form-action">
               <a href="#" class="btn btn-lg btn-block btn-primary w-auto" data-toggle="modal" data-target="#buy-coin">

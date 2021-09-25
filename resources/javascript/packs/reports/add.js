@@ -3,7 +3,7 @@ import { createApp } from 'vue';
 import '~/bootstrap';
 import ListGroup from '~/components/list-group';
 import ListItem from '~/components/list-item';
-// import useForm from '~/utils/use-form';
+import useForm from '~/utils/use-form';
 
 
 
@@ -16,15 +16,16 @@ createApp({
   },
   setup() {
 
-    // const form = useForm({});
+    const form = useForm({
+      name: ''
+    });
 
-    function handleOnSubmit() {
-
-    }
+    function handleOnSubmit() {}
 
 
     return {
-      handleOnSubmit
+      handleOnSubmit,
+      form
     };
 
   }

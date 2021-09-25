@@ -1,11 +1,12 @@
 import { reactive, computed } from 'vue';
-import { cloneDeep } from 'lodash';
+import { cloneDeep, curry } from 'lodash';
 import axios from 'axios';
 
 
-export function useForm(body) {
+export default function useForm(body) {
   const defaults = cloneDeep(body);
   const form = reactive({
+    ...body,
     isSubmiting: false,
     errors: [],
     hasError: computed(
@@ -18,27 +19,28 @@ export function useForm(body) {
     ),
     hasErrors: computed(() => form.errors.length > 0 ),
     data() {
-      return Object.assign({}, body);
-    },
-    clearErrors() {
-      this.errors = [];
-    },
-    reset() {
-      Object.assign(
-        this,
+      return Object.assign(
+        {},
         Object
-          .keys(defaults)
-          .filter(key => defaults.includes(key))
-          .reduce((carry, key) => {
-            carry[key] = defaults[key];
-            return carry;
+          .keys(form)
+          .filter(key => key in body)
+          .reduce((curry, key) => {
+            curry[key] = form[key];
+            return curry;
           }, {})
       );
+    },
+    clearErrors() {
+      form.errors = [];
+      return this;
+    },
+    reset() {
+      Object.assign(form, cloneDeep(defaults));
 
       return this;
     },
     submit(method, options) {
-      const data = this.data();
+      const data = form.data();
 
       options?.onStart(); // trigger on start before form submiting.
       this.isSubmiting = true;
@@ -50,15 +52,15 @@ export function useForm(body) {
         headers: options?.headers
       })
         .then(res => {
-          this.clearErrors();
+          form.clearErrors();
           return res;
         })
         .catch(res => {
-          this.errors = res.response.errors;
+          form.errors = res.response.errors;
           return res;
         })
         .finally(() => {
-          this.isSubmiting = false;
+          form.isSubmiting = false;
         });
     }
   });

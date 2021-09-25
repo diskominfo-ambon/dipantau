@@ -1,11 +1,11 @@
-import { defineComponent } from "vue";
+import { defineComponent, h } from "vue";
 
 export default defineComponent({
     props: {
         modelValue: String,
         initialName: String,
     },
-    render(h) {
+    render() {
         console.log(this.$slots);
 
 

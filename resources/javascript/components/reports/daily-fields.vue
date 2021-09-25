@@ -1,5 +1,4 @@
 <template>
-  <h1>Report fields</h1>
   <div class="buysell-field form-group">
     <div class="form-label-group">
       <label class="form-label" for="title">Judul</label>
@@ -43,7 +42,7 @@
     <div class="form-label-group">
       <label class="form-label" for="description">Deskripsi</label>
     </div>
-    <textarea-input name="description" placeholder="......" required/>
+    <textarea-input name="description" autoresize large placeholder="......" required/>
     <div class="form-note-group">
       <span class="form-note-alt">
       Masukan informasi lengkap tentang pemantauan (masalah & solusi).

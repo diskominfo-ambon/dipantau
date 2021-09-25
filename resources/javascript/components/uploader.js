@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue';
+import { defineComponent, h } from 'vue';
 
 export default defineComponent({
   props: {
@@ -11,7 +11,7 @@ export default defineComponent({
       type: String
     }
   },
-  render(h) {
+  render() {
     const slot = this.$slots;
 
     return h('div', slot);

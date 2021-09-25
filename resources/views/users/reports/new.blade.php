@@ -12,7 +12,7 @@
           <form class="buysell-form" method="POST" action="" @submit.prevent="handleOnSubmit">
             @verbatim
 
-            <h1>Halo {{ form.name }}</h1>
+            <daily-fields/>
 
             <!-- submit -->
             <div class="buysell-field form-action">

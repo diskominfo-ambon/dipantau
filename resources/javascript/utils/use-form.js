@@ -1,5 +1,5 @@
 import { reactive, computed } from 'vue';
-import { cloneDeep, curry } from 'lodash';
+import { cloneDeep } from 'lodash';
 import axios from 'axios';
 
 

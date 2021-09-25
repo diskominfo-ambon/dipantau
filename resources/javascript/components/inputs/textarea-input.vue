@@ -7,10 +7,7 @@
     required
     autofocus
     autocomplete="off"
-    class="`form-control form-control-lg ${large && 'form-control-number'}`">
-  </textarea>
-
-
+    :class="`form-control form-control-lg ${large ? 'form-control-number' : ''}`"></textarea>
 </template>
 
 <script setup>
@@ -25,14 +22,15 @@ const props = defineProps({
 function handleOnInput(e) {
   // if this component set auto-resize.
   const { target } = e;
+
   if (props.autoresize) {
     resolveResize(target);
   }
 }
 
 function resolveResize(el) {
-  el.setAttribute('height', 'auto');
-  el.setAttribute('height', `${el.scrollHeight}px !important;`);
+  el.setAttribute('style', 'height: auto;');
+  el.setAttribute('style', `height: ${el.scrollHeight}px !important;`);
 }
 
 

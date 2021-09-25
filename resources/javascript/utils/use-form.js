@@ -19,16 +19,13 @@ export default function useForm(body) {
     ),
     hasErrors: computed(() => form.errors.length > 0 ),
     data() {
-      return Object.assign(
-        {},
-        Object
-          .keys(form)
-          .filter(key => key in body)
-          .reduce((curry, key) => {
-            curry[key] = form[key];
-            return curry;
-          }, {})
-      );
+      return Object
+        .keys(form)
+        .filter(key => key in body)
+        .reduce((curry, key) => {
+          curry[key] = form[key];
+          return curry;
+        }, {});
     },
     clearErrors() {
       form.errors = [];

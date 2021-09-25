@@ -40,9 +40,9 @@ export default function useForm(body) {
       const data = form.data();
 
       options?.onStart(); // trigger on start before form submiting.
-      this.isSubmiting = true;
+      form.isSubmiting = true;
 
-      axios({
+      return axios({
         data,
         method,
         uri: options?.uri,

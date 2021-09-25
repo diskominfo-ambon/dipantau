@@ -1,13 +1,13 @@
-import { defineComponent } from "vue";
+import { defineComponent, h } from "vue";
 
 export default defineComponent({
   props: {
     for: String,
     text: String,
   },
-  render(h) {
-    const { for, text } = this.props;
+  render() {
+    const { for, text } = this.$props;
 
-    return h(() => h('div', {class: 'form-label-group'}, h('label', {class: 'form-label'}, text)));
+    return h('div', {class: 'form-label-group'}, h('label', {class: 'form-label'}, text));
   }
 });

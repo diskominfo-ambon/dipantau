@@ -1,24 +1,30 @@
 import { createApp } from 'vue';
 
 import '~/bootstrap';
-import ReportFields from './report-fields';
-import useForm from '~/utils/use-form';
+import ListGroup from '~/components/list-group';
+import ListItem from '~/components/list-item';
+// import useForm from '~/utils/use-form';
+
 
 
 createApp({
   components: {
-    ReportFields
+    // DailyFields,
+    // TimeFields,
+    ListGroup,
+    ListItem
   },
   setup() {
 
-    const form = useForm({});
+    // const form = useForm({});
 
-    function handleOnSubmit() {}
+    function handleOnSubmit() {
+
+    }
 
 
     return {
-      handleOnSubmit,
-      form
+      handleOnSubmit
     };
 
   }

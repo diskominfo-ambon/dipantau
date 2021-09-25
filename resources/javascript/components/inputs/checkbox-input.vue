@@ -21,10 +21,7 @@ export default defineComponent({
       type: String
     },
     value: String,
-  },
-  setup() {
-
-  },
+  }
 })
 </script>
 

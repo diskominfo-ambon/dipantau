@@ -50,6 +50,7 @@
     </div>
   </div>
 
+
   <div class="buysell-field form-group">
     <div class="form-label-group">
       <label for="" class="form-label">Upload berkas</label>
@@ -92,7 +93,7 @@ export default defineComponent({
     CheckboxInput,
     CheckboxGroup,
     Uploader,
-    UploadboxInput
+    UploadboxInput,
   },
   data() {
     return {

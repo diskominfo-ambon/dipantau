@@ -42,15 +42,7 @@
             Laporan waktu pemantauan
           </div>
           <list-group>
-            <list-item class="list-report-times__item">
-              <div>
-                <div>
-                  <span>Lalu lintas</span> • <span>Pukul 02:30 WIT</span>
-                </div>
-                <span class="badge badge-dim badge-warning border mt-1 badge-sm">Macet</span>
-              </div>
-              <button href="#" class="btn btn-icon btn-danger btn-sm"><em class="icon ni ni-cross"></em></button>
-            </list-item>
+            <list-report-item/>
           </list-group>
         </div>
       </div>
@@ -62,5 +54,5 @@
 @endsection
 
 @section('head')
-<script async defer src="{{ mix('js/packs/reports/add.js') }}"></script>
+<script defer src="{{ mix('js/packs/reports/add.js') }}"></script>
 @endsection

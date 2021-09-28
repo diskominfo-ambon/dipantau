@@ -25,13 +25,13 @@
         <label class="form-label">Kategori</label>
     </div>
     <div class="form-pm-group">
-      <checkbox-fields>
-        <ul class="buysell-pm-list">
-          <li class="buysell-pm-item">
-            <checkbox-input label="" value="" name="" />
-          </li>
-        </ul>
-      </checkbox-fields>
+      <checkbox-group v-model="options">
+          <checkbox-input labelText="Lalu lintas" value="lalu lintas" name="lalu-lintas" />
+          <checkbox-input labelText="Bandungan" value="bendungan" name="bendungan" />
+      </checkbox-group>
+      <pre>
+        {{ options }}
+      </pre>
       <div class="form-note-group">
         <span class="form-note-alt">Laporan dapat memiliki lebih dari satu ketegori pemantauan.</span>
       </div>
@@ -76,7 +76,7 @@
 import { defineComponent } from 'vue';
 import TextareaInput from '~/components/inputs/textarea-input';
 import TextInput from '~/components/inputs/text-input';
-import CheckboxFields from '~/components/inputs/checkbox-fields';
+import CheckboxGroup from '~/components/inputs/checkbox-group';
 import CheckboxInput from '~/components/inputs/checkbox-input';
 import Uploader from '~/components/uploader';
 import UploadboxInput from '~/components/inputs/uploadbox-input';
@@ -90,9 +90,14 @@ export default defineComponent({
     TextareaInput,
     TextInput,
     CheckboxInput,
-    CheckboxFields,
+    CheckboxGroup,
     Uploader,
     UploadboxInput
+  },
+  data() {
+    return {
+      options: ['bendungan']
+    }
   }
 });
 </script>

@@ -153,3 +153,14 @@ textarea.form-control-number {
         }
     }
 }
+
+
+.checkbox-group {
+    .custom-checkbox {
+        margin-left: 1.25rem;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}

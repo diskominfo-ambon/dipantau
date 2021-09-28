@@ -151,3 +151,10 @@ textarea.form-control-number {
   padding: 0.2rem 0.8rem;
   font-size: 0.8rem;
 }
+
+.checkbox-group .custom-checkbox {
+  margin-left: 1.25rem;
+}
+.checkbox-group .custom-checkbox:first-child {
+  margin-left: 0;
+}

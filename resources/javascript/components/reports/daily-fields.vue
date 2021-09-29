@@ -26,8 +26,8 @@
     </div>
     <div class="form-pm-group">
       <checkbox-group v-model="options">
-          <checkbox-input labelText="Lalu lintas" value="lalu lintas" name="lalu-lintas" />
-          <checkbox-input labelText="Bandungan" value="bendungan" name="bendungan" />
+        <checkbox-input labelText="Lalu lintas" value="lalu lintas" name="lalu-lintas" />
+        <checkbox-input labelText="Bandungan" value="bendungan" name="bendungan" />
       </checkbox-group>
       <pre>
         {{ options }}
@@ -79,6 +79,7 @@ import TextareaInput from '~/components/inputs/textarea-input';
 import TextInput from '~/components/inputs/text-input';
 import CheckboxGroup from '~/components/inputs/checkbox-group';
 import CheckboxInput from '~/components/inputs/checkbox-input';
+import SelectInput from '~/components/inputs/select-input';
 import Uploader from '~/components/uploader';
 import UploadboxInput from '~/components/inputs/uploadbox-input';
 

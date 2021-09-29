@@ -1,4 +1,5 @@
 import { defineComponent, h } from "vue";
+import { cloneDeep } from "lodash";
 
 export default defineComponent({
   props: {
@@ -11,8 +12,28 @@ export default defineComponent({
       group: this
     }
   },
-  render() {
+  computed: {
+    localValue: {
+      set(currValue) {
+        const newValue = cloneDeep(this.modelValue);
+        const index = newValue.indexOf(currValue);
 
+        if (index >= 0) {
+          newValue.splice(index, 1);
+        }
+
+        if (index  == -1) {
+          newValue.push(currValue);
+        }
+
+        this.$emit('update:modelValue', newValue);
+      },
+      get() {
+        return this.modelValue
+      }
+    }
+  },
+  render() {
     const slot = this.$slots.default();
 
     return h('div', {

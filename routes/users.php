@@ -6,6 +6,7 @@ use App\Http\Controllers\Users\DashboardController;
 use App\Http\Controllers\Users\ProfilesController;
 use App\Http\Controllers\Users\TodosController;
 use App\Http\Controllers\Users\ReportsController;
+use App\Http\Controllers\Users\TimelineController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,9 @@ Route::prefix('u')->name('users.')->group(function () {
 
 
     Route::resource('todos', TodosController::class);
+    Route::get('linimasa', [TimelineController::class, 'index'])
+        ->name('timeline');
+
     Route::resource('reports', ReportsController::class)
         ->except(['index']);
 

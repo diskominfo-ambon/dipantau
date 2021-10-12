@@ -16,6 +16,10 @@ class CreateReportsTable extends Migration
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->boolean('is_active')->default(true);
+            $table->datetime('deleted_at')->nullable();
+            $table->foreignId('marker_id') // relasi menuju ke tabel markers ( daftar point CCTV pemantuan)
+                ->onDelete('cascade');
             $table->foreignId('user_id')
                 ->onDelete('cascade');
             $table->timestamps();

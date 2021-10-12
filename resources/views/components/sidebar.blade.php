@@ -106,10 +106,10 @@
               <h6 class="overline-title">Menu</h6>
             </li>
             <li class="nk-menu-item">
-              <x-anchor text="Dashboard" to="{{ route('users.dashboard') }}" icon="ni-dashboard-fill"/>
+              <x-anchor text="Beranda" to="{{ route('users.dashboard') }}" icon="ni-dashboard-fill"/>
             </li>
             <li class="nk-menu-item">
-              <x-anchor text="Feeds" icon="ni-masonry-fill"/>
+              <x-anchor text="Linimasa" to="{{ route('users.timeline') }}" icon="ni-masonry-fill"/>
             </li>
             <li class="nk-menu-item">
               <x-anchor text="To do" to="{{ route('users.todos.index') }}" icon="ni ni-list-thumb-fill"/>

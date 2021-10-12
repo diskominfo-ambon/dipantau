@@ -158,3 +158,46 @@ textarea.form-control-number {
 .checkbox-group .custom-checkbox:first-child {
   margin-left: 0;
 }
+
+.form-select-borderless ~ .select2-container > span.selection > span.select2-selection--single {
+  border: none !important;
+}
+
+.post__report {
+  padding-top: 0.8rem;
+}
+.post__report:last-child {
+  border-bottom: none;
+}
+.post__report:first-child {
+  border-bottom: 1px solid #dbdfea;
+  padding: 0;
+}
+.post__report-header {
+  display: flex;
+  align-items: center;
+}
+.post__report-header > .user-profile {
+  margin-left: 0.6rem;
+}
+
+.user-avatar {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.user-subname {
+  color: gray;
+  font-weight: 500;
+}
+.user-profile p {
+  color: #454545;
+  margin: 0;
+  font-family: Nunito, sans-serif;
+  font-weight: 600;
+}
+.user-profile time {
+  color: gray;
+  font-size: 0.8rem;
+  position: relative;
+  top: -0.2rem;
+}

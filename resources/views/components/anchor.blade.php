@@ -1,6 +1,6 @@
 @props([
   'icon' => '', // empty icon.
-  'text',
+  'text' => '',
   'to'
 ])
 
@@ -9,5 +9,7 @@
     <span class="nk-menu-icon"><em class="icon ni {{ $icon }}"></em></span>
   @endif
 
+  @if (str($text)->isNotEmpty())
   <span class="nk-menu-text">{{ $text }}</span>
+  @endif
 </a>

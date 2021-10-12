@@ -164,3 +164,64 @@ textarea.form-control-number {
         }
     }
 }
+
+.form {
+    &-select {
+        &-borderless ~ .select2-container  > span.selection > span.select2-selection--single {
+            border: none !important;
+        }
+    }
+}
+
+.post {
+    &__report {
+
+        padding-top: .8rem;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &:first-child {
+            border-bottom: 1px solid $light-gray;
+            padding: 0;
+        }
+
+        &-header {
+            display: flex;
+            align-items: center;
+
+
+            > .user-profile {
+                margin-left: .6rem;
+            }
+        }
+
+    }
+}
+
+
+.user {
+    &-avatar {
+        object-fit: cover;
+    }
+    &-subname {
+        color: gray;
+        font-weight: 500;
+    }
+    &-profile {
+        p {
+            color: $dark;
+            margin: 0;
+            font-family: Nunito,sans-serif;
+            font-weight: 600;
+        }
+
+        time {
+            color: gray;
+            font-size: .8rem;
+            position: relative;
+            top: -.2rem;
+        }
+    }
+}

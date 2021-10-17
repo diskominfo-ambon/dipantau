@@ -10,4 +10,8 @@ use App\Models\Concerns\Activeable;
 class Report extends Model
 {
     use HasFactory, SoftDeletes;
+
+    protected $casts = [
+        'is_active' => 'boolean'
+    ];
 }

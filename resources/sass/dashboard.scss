@@ -197,6 +197,42 @@ textarea.form-control-number {
             }
         }
 
+        &-bars {
+            list-style: none;
+            margin-top: 1rem;
+            padding: .5rem 0;
+
+            li {
+                display: inline-block !important;
+                &:last-child {
+                    margin-left: .9rem;
+                }
+            }
+        }
+
+    }
+
+    &__header {
+        .title {
+            font-size: 1rem;
+            font-family: Nunito,sans-serif;
+            font-weight: 600;
+
+            span, time {
+                font-weight: 500;
+            }
+        }
+        .subtitle {
+            font-size: .8rem;
+            color: $light-gray;
+            font-family: Nunito,sans-serif;
+            font-weight: 600;
+        }
+
+    }
+
+    &__downloader {
+
     }
 }
 

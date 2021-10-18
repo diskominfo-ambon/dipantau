@@ -180,7 +180,31 @@ textarea.form-control-number {
 .post__report-header > .user-profile {
   margin-left: 0.6rem;
 }
-
+.post__report-bars {
+  list-style: none;
+  margin-top: 1rem;
+  padding: 0.5rem 0;
+}
+.post__report-bars li {
+  display: inline-block !important;
+}
+.post__report-bars li:last-child {
+  margin-left: 0.9rem;
+}
+.post__header .title {
+  font-size: 1rem;
+  font-family: Nunito, sans-serif;
+  font-weight: 600;
+}
+.post__header .title span, .post__header .title time {
+  font-weight: 500;
+}
+.post__header .subtitle {
+  font-size: 0.8rem;
+  color: #dbdfea;
+  font-family: Nunito, sans-serif;
+  font-weight: 600;
+}
 .user-avatar {
   -o-object-fit: cover;
      object-fit: cover;

@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Redirect;
 
 Route::get('/',  fn () => Redirect::route('login'));
 
+Route::view('/help', 'help')
+    ->name('help');
+
 Auth::routes([
     'verify' => true
 ]);
+

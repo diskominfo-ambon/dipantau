@@ -8,7 +8,7 @@
       <a href="html/crypto/index.html" class="logo-link nk-sidebar-logo">
         <img class="logo-light logo-img" src="{{ asset('vendor/dashlite/img/logo.png') }}" srcset="{{ asset('vendor/dashlite/img/logo2x.png') }} 2x" alt="logo">
           <img class="logo-dark logo-img" src="{{ asset('vendor/dashlite/img/logo-dark.png') }}" srcset="{{ asset('vendor/dashlite/img/logo-dark2x.png') }} 2x" alt="logo-dark">
-        <span class="nio-version">dipantau</span>
+        DIPANTAU
       </a>
     </div>
     <div class="nk-menu-trigger mr-n2">
@@ -113,7 +113,7 @@
         <div class="nk-sidebar-footer">
           <ul class="nk-menu nk-menu-footer">
             <li class="nk-menu-item">
-              <x-anchor text="Support" icon="ni-help-alt"/>
+              <x-anchor text="Butuh bantuan?" to="{{ route('help') }}" icon="ni-help-alt"/>
             </li>
           </ul><!-- .nk-footer-menu -->
         </div><!-- .nk-sidebar-footer -->

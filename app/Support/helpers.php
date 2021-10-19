@@ -14,7 +14,7 @@ if (!function_exists('str')) {
 
 
 if (!function_exists('carbon')) {
-    function carbon(string|DateTimeInterface|null $datetime): self {
+    function carbon(string|DateTimeInterface|null $datetime): Carbon {
         if (is_null($datetime) || str($datetime)->isEmpty()) return Carbon::now();
 
         return Carbon::parse($datetime);

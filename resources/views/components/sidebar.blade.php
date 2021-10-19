@@ -19,27 +19,25 @@
     <div class="nk-sidebar-body" data-simplebar>
       <div class="nk-sidebar-content">
         <div class="nk-sidebar-widget d-none d-xl-block">
-          <div class="user-account-info between-center">
-            <div class="user-account-main">
-              <h6 class="text-secondary">👋 Hai Azman Abdullah</h6>
-            </div>
-          </div>
-          <ul class="user-account-data">
-            <li class="mb-2">
-              <div class="user-account-label">
-                <h6 class="sub-text">👨🏻‍💻 Aktivitas terakhir</h6>
-              </div>
-              <div class="user-account-value">
-                <h6 class="sub-text text-base">28 Jam yang lalu</h6>
-              </div>
-            </li>
-          </ul>
-          <div class="user-account-actions">
+          <h6 class="overline-title">Pintasan</h6>
+          <div class="user-account-actions mt-2">
             @if ($user->hasRole('user'))
               <a href="{{ route('users.reports.create') }}" class="btn btn-lg btn-primary d-flex justify-content-center align-content-center">
                 <em class="icon ni ni-note-add-c"></em>
                 <span>Buat laporan</span>
               </a>
+
+              <div class="dropdown mt-1 d-block">
+                <a href="#" class="btn btn-dim btn-lg btn-outline-primary d-flex justify-content-center align-content-center" data-toggle="dropdown"><em class="icon ni ni-printer-fill mr-1"></em> Download laporan <em class="icon ni ni-chevron-down"></em></a>
+
+                <div class="dropdown-menu dropdown-menu-auto mt-1">
+                  <ul class="link-list-plain d-block">
+                    <li class="w-100"><a href="#">Hari ini</a></li>
+                    <li class="w-100"><a href="#">1 Minggu</a></li>
+                    <li class="w-100"><a href="#">1 Bulan</a></li>
+                  </ul>
+                </div>
+              </div>
             @endif
           </div>
         </div><!-- .nk-sidebar-widget -->
@@ -61,22 +59,6 @@
             </div>
           </a>
           <div class="nk-profile-content toggle-expand-content" data-content="sidebarProfile">
-            <div class="user-account-info between-center">
-              <div class="user-account-main">
-                <h6 class="text-secondary">👋 Hai Azman Abdullah</h6>
-              </div>
-            </div>
-            <ul class="user-account-data">
-              <li class="mb-2">
-                <div class="user-account-label">
-                  <h6 class="sub-text">👨🏻‍💻 Aktivitas terakhir</h6>
-                </div>
-                <div class="user-account-value">
-                  <h6 class="sub-text text-base">28 Jam yang lalu</h6>
-                </div>
-              </li>
-            </ul>
-
 
             <ul class="link-list">
               <li><a href="#"><em class="icon ni ni-user-fill"></em><span>Profil saya</span></a></li>
@@ -87,13 +69,24 @@
                   <span>Buat laporan</span>
                 </a>
               </li>
+              <li class="dropdown mt-1 d-block">
+                <a href="#" data-toggle="dropdown"><em class="icon ni ni-printer-fill mr-1"></em> Download laporan <em class="icon ni ni-chevron-down"></em></a>
+
+                <div class="dropdown-menu dropdown-menu-auto mt-1">
+                  <ul class="link-list-plain d-block">
+                    <li class="w-100"><a href="#">Hari ini</a></li>
+                    <li class="w-100"><a href="#">1 Minggu</a></li>
+                    <li class="w-100"><a href="#">1 Bulan</a></li>
+                  </ul>
+                </div>
+              </li>
               @endif
             </ul>
             <ul class="link-list">
               <li>
                 <form method="POST" action="{{ route('logout') }}">
                   @csrf
-                  <button class="btn btn-white btn-block"><em class="icon ni ni-signout" style="margin-left: -12px; display: inline-block;"></em><span>Keluar</span></button>
+                  <button class="btn btn-white btn-block text-danger"><em class="icon ni ni-signout" style="margin-left: -12px; display: inline-block;"></em><span>Keluar</span></button>
                 </form>
               </li>
             </ul>

@@ -8,6 +8,22 @@
     100% { top: -160px; }
 }
 
+.logo-text {
+    font-size: 1.8rem !important;
+    font-weight: 700;
+    font-family: Nunito,sans-serif;
+    color: $dark;
+}
+
+.is-disabled::after {
+    content: attr(data-disabled-text);
+    font-size: .7rem;
+    background-color: $light-gray;
+    padding: .2rem .8rem;
+    border-radius: 5px;
+    margin-left: .3rem;
+}
+
 .badge-overflow {
     overflow: hidden;
     position: relative;

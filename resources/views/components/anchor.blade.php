@@ -4,7 +4,7 @@
   'to'
 ])
 
-<a href="{{ $to ?? '#' }}" class="nk-menu-link">
+<a href="{{ $to ?? '#' }}" {{ $attributes->merge(['class' => 'nk-menu-link']) }}>
   @if ( str($icon)->isNotEmpty() )
     <span class="nk-menu-icon"><em class="icon ni {{ $icon }}"></em></span>
   @endif

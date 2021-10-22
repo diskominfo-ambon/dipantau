@@ -5,10 +5,8 @@
 <div class="nk-sidebar nk-sidebar-fixed " data-content="sidebarMenu">
   <div class="nk-sidebar-element nk-sidebar-head">
     <div class="nk-sidebar-brand">
-      <a href="html/crypto/index.html" class="logo-link nk-sidebar-logo">
-        <img class="logo-light logo-img" src="{{ asset('vendor/dashlite/img/logo.png') }}" srcset="{{ asset('vendor/dashlite/img/logo2x.png') }} 2x" alt="logo">
-          <img class="logo-dark logo-img" src="{{ asset('vendor/dashlite/img/logo-dark.png') }}" srcset="{{ asset('vendor/dashlite/img/logo-dark2x.png') }} 2x" alt="logo-dark">
-        DIPANTAU
+      <a href="html/crypto/index.html" class="logo-link nk-sidebar-logo logo-text">
+        dipantau
       </a>
     </div>
     <div class="nk-menu-trigger mr-n2">
@@ -105,7 +103,8 @@
               <x-anchor text="Linimasa" to="{{ route('users.timeline') }}" icon="ni-masonry-fill"/>
             </li>
             <li class="nk-menu-item">
-              <x-anchor text="To do" to="{{ route('users.todos.index') }}" icon="ni ni-list-thumb-fill"/>
+              <x-anchor text="To do" to="{{ route('users.todos.index') }}" icon="ni ni-list-thumb-fill" class="is-disabled" data-disabled-text="Segera" />
+
             </li>
           </ul><!-- .nk-menu -->
         </div><!-- .nk-sidebar-menu -->

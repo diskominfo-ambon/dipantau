@@ -22,6 +22,22 @@
     top: -160px;
   }
 }
+.logo-text {
+  font-size: 1.8rem !important;
+  font-weight: 700;
+  font-family: Nunito, sans-serif;
+  color: #454545;
+}
+
+.is-disabled::after {
+  content: attr(data-disabled-text);
+  font-size: 0.7rem;
+  background-color: #dbdfea;
+  padding: 0.2rem 0.8rem;
+  border-radius: 5px;
+  margin-left: 0.3rem;
+}
+
 .badge-overflow {
   overflow: hidden;
   position: relative;

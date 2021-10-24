@@ -23,12 +23,7 @@
         </div>
         <div class="dropdown-body dropdown-body-rg">
           <div class="row gx-6 gy-3">
-            <div class="col-12">
-              <div class="custom-control custom-control-sm custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="hasKYC">
-                <label class="custom-control-label" for="hasKYC"> Tandai bersama beberapa pengguna</label>
-              </div>
-            </div>
+
             <div class="col-12">
               <div class="form-group">
                 <label class="overline-title overline-title-alt">Kategori pemantuan</label>
@@ -41,7 +36,7 @@
                 </select>
               </div>
             </div>
-            <div class="col-8">
+            <div class="col-12">
               <div class="form-group">
                 <label class="overline-title overline-title-alt">Tanggal</label>
                 <select class="form-select form-select-sm">
@@ -51,6 +46,12 @@
                   <option value="suspend">Suspend</option>
                   <option value="deleted">Deleted</option>
                 </select>
+              </div>
+            </div>
+            <div class="col-8">
+              <div class="custom-control custom-control-sm custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="hasKYC">
+                <label class="custom-control-label" for="hasKYC"> Tandai bersama beberapa pengguna</label>
               </div>
             </div>
             <div class="col-4 position-relative">
@@ -67,13 +68,15 @@
   </div><!-- .nk-block-head -->
 
   <div class="nk-tb-list nk-tb-ulist">
+
+    @for ($i = 0 ; $i<20; $i++)
     <div class="nk-tb-item">
-      <div class="nk-tb-col tb-col-mb">
+      <div class="nk-tb-col tb-col-lg">
         <div class="d-flex">
           <x-icon name="reports" style="font-size: 32px;" class="mr-2" />
           <div>
             <h6 class="fs-16px">📍  Pemantauan CCTV Abdulalie · <time datetime="">11 - 12 Januari 2021</h6>
-            <ul class="d-flex">
+            <ul class="d-flex mt-2">
               <li class="fs-13px font-nunito"><x-icon name="calendar-alt-fill"/> 10 Feb 2020</li>
               <li class="fs-13px font-nunito mx-1">·</li>
               <li class="fs-13px font-nunito"><x-icon name="bookmark-fill"/> Lalu lintas </li>
@@ -111,6 +114,7 @@
         </ul>
       </div>
     </div><!-- .nk-tb-item -->
+    @endfor
   </div>
 
 </div>

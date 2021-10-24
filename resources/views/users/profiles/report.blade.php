@@ -69,7 +69,7 @@
         <div class="d-flex">
           <x-icon name="reports" style="font-size: 32px;" class="mr-2" />
           <div>
-            <h6 class="fs-16px">📍  Pemantauan CCTV Abdulalie · <time datetime="">11 - 12 Januari 2021</h6>
+            <h6 class="fs-15px">📍  Pemantauan CCTV Abdulalie · <time datetime="">11 - 12 Januari 2021</h6>
             <ul class="d-flex mt-2">
               <li class="fs-13px font-nunito"><x-icon name="calendar-alt-fill"/> 10 Feb 2020</li>
               <li class="fs-13px font-nunito mx-1">·</li>

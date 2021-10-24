@@ -3,31 +3,82 @@
 @section('content')
 <section class="bg-white">
   <div class="row">
-    <div class="col-sm-12 col-md-6">
+    <div class="col-sm-6">
       <h3 class="m-0">Linimasa</h3>
       <p>Kumpulan laporan pemantauan</p>
     </div>
-    <div class="col-sm-12 col-md-6">
+    <div class="col-sm-6">
       <div class="d-flex align-items-center justify-content-end">
-        <form class="border border-light rounded-sm d-flex align-items-center w-100">
-          <div class="form-control-wrap w-100" data-toggle="tooltip" title="Telusuri lokasi pemantauan">
-            <select class="form-select form-select-borderless" name="marker_id">
-              @foreach($marker_points as $point)
-                <option value="{{ $point->id }}"> {{ ucfirst($point->name) }} </option>
-              @endforeach
-            </select>
-          </div>
-          <div class="form-control-wrap w-100" data-toggle="tooltip" title="Telusuri nama pengguna">
-            <select class="form-select form-select-borderless" name="user_id">
-              @foreach($users as $user)
-                <option value="{{ $user->id }}"> {{ ucfirst($user->name) }} </option>
-              @endforeach
-            </select>
-          </div>
-          <button class="btn btn-icon">
-            <em class="icon ni ni-search"></em>
-          </button>
-        </form>
+        <div class="dropdown mt-2">
+          <a href="#" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+            Urutkan
+            <em class="icon ni ni-filter-alt ml-1"></em>
+          </a>
+          <div class="filter-wg dropdown-menu dropdown-menu-xl dropdown-menu-right">
+            <div class="dropdown-head">
+              <span class="sub-title dropdown-title">Urutkan bedasarkan</span>
+              <div class="dropdown">
+                <a href="#" class="btn btn-sm btn-icon">
+                  <em class="icon ni ni-cross"></em>
+                </a>
+              </div>
+            </div>
+            <div class="dropdown-body dropdown-body-rg">
+              <div class="row gx-6 gy-3">
+
+                <div class="col-12">
+                  <div class="form-group">
+                    <label class="overline-title overline-title-alt">Pengguna</label>
+                    <select class="form-select form-select-sm">
+                      <option value="any">Any Status</option>
+                      <option value="active">Active</option>
+                      <option value="pending">Pending</option>
+                      <option value="suspend">Suspend</option>
+                      <option value="deleted">Deleted</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label class="overline-title overline-title-alt">Kategori pemantuan</label>
+                    <select class="form-select form-select-sm">
+                      <option value="any">Any Status</option>
+                      <option value="active">Active</option>
+                      <option value="pending">Pending</option>
+                      <option value="suspend">Suspend</option>
+                      <option value="deleted">Deleted</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label class="overline-title overline-title-alt">Tanggal</label>
+                    <select class="form-select form-select-sm">
+                      <option value="any">Any Status</option>
+                      <option value="active">Active</option>
+                      <option value="pending">Pending</option>
+                      <option value="suspend">Suspend</option>
+                      <option value="deleted">Deleted</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-8">
+                  <div class="custom-control custom-control-sm custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="hasKYC">
+                    <label class="custom-control-label" for="hasKYC"> Tandai bersama beberapa pengguna</label>
+                  </div>
+                </div>
+                <div class="col-4 position-relative">
+                  <div style="position: absolute !important; bottom: .625rem;">
+                    <div class="form-group">
+                      <button type="button" class="btn btn-secondary">Telusuri</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- .filter-wg -->
+        </div><!-- .dropdown -->
       </div>
     </div>
   </div>

@@ -4,12 +4,11 @@
 
 @section('breadcrumb')
 <div class="nk-block-head">
-  <div class="nk-block-head-sub"><span>Dashboard</span> </div>
   <div class="nk-block-between-md g-4">
     <div class="nk-block-head-content">
-      <h2 class="nk-block-title fw-normal">@azmanabdlh / Dashboard</h2>
+      <h4 class="nk-block-title fw-bold font-nunito">Beranda Anda</h4>
       <div class="nk-block-des">
-        <p>Berikut semua daftar aset pengunaan Anda!</p>
+        <p>Berikut beberapa informasi aktifitas penggunaan Anda.</p>
       </div>
     </div>
     <div class="nk-block-head-content">
@@ -77,8 +76,8 @@
               <h5 class="nk-wgw-title title">To-do</h5>
             </a>
             <div class="nk-wgw-balance">
-              <div class="amount">329k<span class="currency currency-usd">Jumlah</span></div>
-              <div class="amount-sm">Terdapat 29k yang belum terselesaikan</div>
+              <div class="amount">000<span class="currency currency-usd">Jumlah</span></div>
+              <div class="amount-sm">Belum tersedia untuk saat ini</div>
             </div>
           </div>
         </div>

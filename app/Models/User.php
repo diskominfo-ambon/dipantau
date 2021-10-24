@@ -12,6 +12,7 @@ use Spatie\Permission\Traits\HasPermissions;
 use App\Models\Users\Reportable;
 use App\Models\Concerns\Activeable;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable implements MustVerifyEmail
@@ -55,5 +56,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function scopeWithoutCurrentUser(Builder $builder): Builder
     {
         return $builder->where('id', '!=',Auth::user()->id);
+    }
+
+
+    public function reports(): HasMany
+    {
+        return $this->hasMany(Report::class);
     }
 }

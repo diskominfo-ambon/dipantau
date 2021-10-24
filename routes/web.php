@@ -28,6 +28,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/profile', [ProfilesController::class, 'edit'])
         ->name('profile');
 
-    Route::post('/user', [UsersController::class, 'update'])
-        ->name('profile.store');
+    Route::put('/user', [ProfilesController::class, 'update'])
+        ->name('profile.update');
 });

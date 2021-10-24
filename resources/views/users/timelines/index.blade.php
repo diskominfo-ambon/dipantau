@@ -1,7 +1,7 @@
 @extends('layouts.dashlite')
 
 @section('content')
-<section class="bg-white position-sticky sticky-top">
+<section class="bg-white">
   <div class="row">
     <div class="col-sm-12 col-md-6">
       <h3 class="m-0">Linimasa</h3>
@@ -39,7 +39,7 @@
   @empty
     <div class="d-flex flex-column align-items-center justify-content-center">
       <img src="{{ asset('img/empty.png') }}" alt="empty"/>
-      <h4>Laporan pemantuan belum tersedia.</h4>
+      <h4>Pemantuan belum tersedia.</h4>
     </div>
   @endforelse
 

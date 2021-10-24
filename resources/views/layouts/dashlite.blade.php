@@ -28,6 +28,13 @@
         <div class="nk-content nk-content-fluid">
           <div class="container-xl wide-lg">
             <div class="nk-content-body">
+              @if (session('message'))
+              <div class="alert alert-icon alert-primary alert-dismissible" role="alert">
+                <em class="icon ni ni-check-circle"></em>
+                {{ session('message') }}
+                <button class="close" data-dismiss="alert"></button>
+              </div>
+              @endif
               @yield('breadcrumb')
 
               @yield('content')

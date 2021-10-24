@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Concerns\Activeable;
 use Illuminate\Database\Eloquent\Model;
@@ -18,14 +19,14 @@ class Report extends Model
     ];
 
 
-    public function scopeFindByQueryEquals(Builder $builder, Request $request, array $keys): Builder
+    public function scopeFindQueryByEquals(Builder $builder, array $fields): Builder
     {
-
-        return $builder->where(function (Builder $builder) use ($request, $keys) {
-            foreach($keys as $key) {
-                if ($request->filled($key)) $builder->where($key, 'like', "%{$request->get($key)}%");
-            }
-
-        });
+        return $builder
+            ->where(function (Builder $builder) use ($fields) {
+                foreach ($fields as $key => $value) {
+                    Str::of($value)->trim()->isNotEmpty()
+                        && $builder->where($key, 'like', "%{$value}%");
+                }
+            });
     }
 }

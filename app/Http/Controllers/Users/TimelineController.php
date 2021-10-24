@@ -17,7 +17,14 @@ class TimelineController extends Controller
         $users = User::withoutCurrentUser()->get();
         $marker_points = MarkerPoint::all();
         $reports = Report::latest()
-            ->findByQueryEquals($request, ['marker_id', 'user_id'])
+        // * Telusuri pencarian bedasarkan permintaan queries.
+            ->findQueryByEquals(
+                $request->only([
+                    'user_id',
+                    'date',
+                    'marker_point_id'
+                ])
+            )
             ->limit(10)
             ->get();
 

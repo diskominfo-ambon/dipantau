@@ -4,32 +4,23 @@ namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Report;
 use Illuminate\Database\Eloquent\Builder;
+use App\Models\Report;
+use App\Models\MarkerPoint;
+use App\Models\User;
+
 
 class TimelineController extends Controller
 {
     public function index(Request $request)
     {
+        $users = User::withoutCurrentUser()->get();
+        $marker_points = MarkerPoint::all();
         $reports = Report::latest()
-            ->where(function (Builder $builder) use ($request) {
-                //  kunci nama yang digunakan untuk pencarian query.
-                $searchable = [
-                    'marker_id',
-                    'user_id'
-                ];
-
-                foreach ($searchable as $key) {
-                    if ($request->filled($key)) {
-                        $builder->where($key, 'like', "%{
-                            $request->get($key)
-                        }%");
-                    }
-                }
-            })
+            ->findByQueryEquals($request, ['marker_id', 'user_id'])
             ->limit(10)
             ->get();
 
-        return view('users.timelines.index', compact('reports'));
+        return view('users.timelines.index', compact('reports', 'users', 'marker_points'));
     }
 }

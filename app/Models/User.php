@@ -11,6 +11,8 @@ use Spatie\Permission\Traits\HasRoles;
 use Spatie\Permission\Traits\HasPermissions;
 use App\Models\Users\Reportable;
 use App\Models\Concerns\Activeable;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -48,4 +50,10 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
         'is_active' => 'boolean'
     ];
+
+
+    public function scopeWithoutCurrentUser(Builder $builder): Builder
+    {
+        return $builder->where('id', '!=',Auth::user()->id);
+    }
 }

@@ -1,279 +1,74 @@
 
-@import 'globals';
 @import 'variables';
 @import 'breakpoints';
+@import 'globals';
+@import 'linimasa';
+@import 'sidebar';
+@import 'animations';
+@import 'profile';
 
-
-@keyframes scroll-top {
-    100% { top: -160px; }
-}
-
-.logo-text {
-    font-size: 1.8rem !important;
-    font-weight: 700;
-    font-family: Nunito,sans-serif;
-    color: $dark;
-}
-
-.is-disabled::after {
-    content: attr(data-disabled-text);
-    font-size: .7rem;
-    background-color: $light-gray;
-    padding: .2rem .8rem;
-    border-radius: 5px;
-    margin-left: .3rem;
-}
-
-.badge-overflow {
-    overflow: hidden;
-    position: relative;
-    min-height: 3.86rem;
-    top: .75rem;
-
-    &__container {
-        display: flex;
-        flex-wrap: wrap;
-        position: absolute;
-        top:0;
-        transform: skewY(-5deg);
-        animation: scroll-top 3s linear 1s infinite;
-    }
-    &__item {
-        background-color: $dim-blue;
-        color: $dark;
-        border: 1px solid $dim-blue-dark;
-        padding: 0.2rem 0.5rem;
-        border-radius: 5px;
-        margin-right: .4rem;
-        margin-bottom: .4rem;
-        font-family: Nunito,sans-serif;
-        font-size: .8rem;
-
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-}
 
 
 .nk-wgw-subtitle {
+  margin-top: .1rem;
+  font-size: 0.8rem;
+  color: gray;
+  font-family: 'Roboto';
+  font-weight: 400;
+}
+.nk-wgw {
+  &-title {
+    font-family: Nunito,sans-serif;
+    font-weight: 800;
+  }
+
+  &-subtitle {
     margin-top: .1rem;
     font-size: 0.8rem;
     color: gray;
     font-family: 'Roboto';
     font-weight: 400;
-}
-.nk-wgw {
-    &-title {
-        font-family: Nunito,sans-serif;
-        font-weight: 800;
-    }
+  }
 
-    &-subtitle {
-        margin-top: .1rem;
-        font-size: 0.8rem;
-        color: gray;
-        font-family: 'Roboto';
-        font-weight: 400;
-    }
-
-    &-balance {
-        font-family: Nunito,sans-serif;
-    }
+  &-balance {
+    font-family: Nunito,sans-serif;
+  }
 }
 .buysell-pm {
-    &-list {
-        display: flex;
-        align-items: center;
-        overflow-y: hidden;
-        overflow-x: scroll;
-    }
-
-    &-item {
-        flex-grow: 1;
-        flex-shrink: 0;
-        border: none !important;
-        font-family: Nunito,sans-serif;
-        font-weight: 600;
-    }
-}
-
-.form-control-number {
-    padding: .62rem 1.52rem !important;
-    height: 4rem !important;
-}
-textarea.form-control-number {
-    padding: .62rem 1.52rem !important;
-    min-height: 4rem !important;
-    font-size: 20px !important;
-}
-
-.upload-box {
+  &-list {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+  }
 
-    &__field {
-        cursor: pointer;
-
-        &:hover {
-            background-color: $dim-blue;
-            border-color: $dim-blue-dark;
-        }
-    }
-
-    &__item {
-        border-radius: 5px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid $light-gray;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 9.5rem;
-        width: 8rem;
-
-        .icon {
-            background-color: $light;
-            height: 3.125rem;
-            width: 3.125rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            font-size: 1.5rem;
-        }
-    }
+  &-item {
+    flex-grow: 1;
+    flex-shrink: 0;
+    border: none !important;
+    font-family: Nunito,sans-serif;
+    font-weight: 600;
+  }
 }
 
 .list-report-times {
-    &__item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-        span {
-            font-size: .8rem;
-            font-family: Nunito,sans-serif;
-            font-weight: 600;
-        }
-
-        .badge {
-            &-sm {
-                padding: .2rem .80rem;
-                font-size: .80rem;
-            }
-        }
+    span {
+      font-size: .8rem;
+      font-family: Nunito,sans-serif;
+      font-weight: 600;
     }
+
+    .badge {
+      &-sm {
+        padding: .2rem .80rem;
+        font-size: .80rem;
+      }
+    }
+  }
 }
 
-
-.checkbox-group {
-    .custom-checkbox {
-        margin-left: 1.25rem;
-
-        &:first-child {
-            margin-left: 0;
-        }
-    }
-}
-
-.form {
-    &-select {
-        &-borderless ~ .select2-container  > span.selection > span.select2-selection--single {
-            border: none !important;
-        }
-    }
-}
-
-.post {
-    &__report {
-
-        padding-top: .8rem;
-
-        &:last-child {
-            border-bottom: none;
-        }
-
-        &:first-child {
-            border-bottom: 1px solid $light-gray;
-            padding: 0;
-        }
-
-        &-header {
-            display: flex;
-            align-items: center;
-
-
-            > .user-profile {
-                margin-left: .6rem;
-            }
-        }
-
-        &-bars {
-            list-style: none;
-            margin-top: 1rem;
-            padding: .5rem 0;
-
-            li {
-                display: inline-block !important;
-                &:last-child {
-                    margin-left: .9rem;
-                }
-            }
-        }
-
-    }
-
-    &__header {
-        .title {
-            font-size: 1rem;
-            font-family: Nunito,sans-serif;
-            font-weight: 600;
-
-            span, time {
-                font-weight: 500;
-            }
-        }
-        .subtitle {
-            font-size: .8rem;
-            color: $light-gray;
-            font-family: Nunito,sans-serif;
-            font-weight: 600;
-        }
-
-    }
-
-    &__downloader {
-
-    }
-}
-
-
-.user {
-    &-avatar {
-        object-fit: cover;
-    }
-    &-subname {
-        color: gray;
-        font-weight: 500;
-    }
-    &-profile {
-        p {
-            color: $dark;
-            margin: 0;
-            font-family: Nunito,sans-serif;
-            font-weight: 600;
-        }
-
-        time {
-            color: gray;
-            font-size: .8rem;
-            position: relative;
-            top: -.2rem;
-        }
-    }
-}

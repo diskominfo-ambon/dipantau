@@ -11,13 +11,17 @@
       <div class="d-flex align-items-center justify-content-end">
         <form class="border border-light rounded-sm d-flex align-items-center w-100">
           <div class="form-control-wrap w-100" data-toggle="tooltip" title="Telusuri lokasi pemantauan">
-            <select class="form-select form-select-borderless" name="marker">
-              <option value=""> halo dunia </option>
+            <select class="form-select form-select-borderless" name="marker_id">
+              @foreach($marker_points as $point)
+                <option value="{{ $point->id }}"> {{ ucfirst($point->name) }} </option>
+              @endforeach
             </select>
           </div>
           <div class="form-control-wrap w-100" data-toggle="tooltip" title="Telusuri nama pengguna">
-            <select class="form-select form-select-borderless" name="marker">
-              <option value=""> halo dunia </option>
+            <select class="form-select form-select-borderless" name="user_id">
+              @foreach($users as $user)
+                <option value="{{ $user->id }}"> {{ ucfirst($user->name) }} </option>
+              @endforeach
             </select>
           </div>
           <button class="btn btn-icon">
@@ -30,7 +34,14 @@
 </section>
 
 <x-timeline class="mt-5">
- <x-post/>
- <x-post/>
+  @forelse ($reports as $report)
+    <x-post/>
+  @empty
+    <div class="d-flex flex-column align-items-center justify-content-center">
+      <img src="{{ asset('img/empty.png') }}" alt="empty"/>
+      <h4>Laporan pemantuan belum tersedia.</h4>
+    </div>
+  @endforelse
+
 </x-timeline>
 @endsection

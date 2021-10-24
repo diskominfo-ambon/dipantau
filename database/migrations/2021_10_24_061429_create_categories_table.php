@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTodoUserTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateTodoUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('todo_user', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('todo_id')
-                ->onDelete('cascade');
-            $table->foreignId('user_id')
-                ->onDelete('cascade');
-            $table->datetime('read_at')->nullable();
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreateTodoUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('todo_user');
+        Schema::dropIfExists('categories');
     }
 }

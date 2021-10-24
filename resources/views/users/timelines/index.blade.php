@@ -29,7 +29,7 @@
                 <div class="col-12">
                   <div class="form-group">
                     <label class="overline-title overline-title-alt">Pengguna</label>
-                    <select class="form-select form-select-sm">
+                    <select class="form-select form-select-sm" data-search="on">
                       <option value="any">Any Status</option>
                       <option value="active">Active</option>
                       <option value="pending">Pending</option>
@@ -41,7 +41,7 @@
                 <div class="col-12">
                   <div class="form-group">
                     <label class="overline-title overline-title-alt">Kategori pemantuan</label>
-                    <select class="form-select form-select-sm">
+                    <select class="form-select form-select-sm" data-search="on">
                       <option value="any">Any Status</option>
                       <option value="active">Active</option>
                       <option value="pending">Pending</option>
@@ -53,13 +53,7 @@
                 <div class="col-12">
                   <div class="form-group">
                     <label class="overline-title overline-title-alt">Tanggal</label>
-                    <select class="form-select form-select-sm">
-                      <option value="any">Any Status</option>
-                      <option value="active">Active</option>
-                      <option value="pending">Pending</option>
-                      <option value="suspend">Suspend</option>
-                      <option value="deleted">Deleted</option>
-                    </select>
+                    <input type="text" class="form-control date-picker" data-date-format="yyyy-mm-dd" placeholder="Opsional: Pilih semua waktu"/>
                   </div>
                 </div>
                 <div class="col-8">
@@ -71,7 +65,7 @@
                 <div class="col-4 position-relative">
                   <div style="position: absolute !important; bottom: .625rem;">
                     <div class="form-group">
-                      <button type="button" class="btn btn-secondary">Telusuri</button>
+                      <button type="button" class="btn btn-primary">Telusuri</button>
                     </div>
                   </div>
                 </div>

@@ -11,19 +11,17 @@
       </div>
       <div class="nk-header-brand d-xl-none">
         <a href="{{ route('users.dashboard') }}" class="logo-link">
-          <img class="logo-light logo-img" src="{{ asset('vendor/dashlite/img/logo.png') }}" srcset="{{ asset('vendor/dashlite/img/logo2x.png') }} 2x" alt="logo">
-          <img class="logo-dark logo-img" src="{{ asset('vendor/dashlite/img/logo-dark.png') }}" srcset="{{ asset('vendor/dashlite/img/logo-dark2x.png') }} 2x" alt="logo-dark">
-          <span class="nio-version">Dipantau</span>
+          <span class="text-primary fs-20px">🔎 🚙 Pantau</span>
         </a>
       </div>
       <div class="nk-header-news d-none d-xl-block">
         <div class="nk-news-list">
-          <a class="nk-news-item" href="#">
+          <a class="nk-news-item" href="{{ route('help') }}">
             <div class="nk-news-icon">
               <em class="icon ni ni-card-view"></em>
             </div>
             <div class="nk-news-text">
-              <p>Do you know the latest update of 2019? <span> A overview of our is now available on YouTube</span></p>
+              <p>Baca informasi lengkap mengenai kententuan dan kebijakan dalam penggunaan aplikasi</p>
               <em class="icon ni ni-external"></em>
             </div>
           </a>

@@ -10014,3 +10014,132 @@ h3 {
 .form-control-wrap.form-select-lg .select2-selection__arrow {
   top: 10px;
 }
+
+* {
+  font-family: Nunito, sans-serif;
+}
+
+.logo-text {
+  font-size: 1.8rem !important;
+  font-weight: 700;
+  font-family: Nunito, sans-serif;
+  color: #454545;
+}
+
+.is-disabled::after {
+  content: attr(data-disabled-text);
+  font-size: 0.7rem;
+  background-color: #e5e9f2;
+  padding: 0.2rem 0.8rem;
+  border-radius: 5px;
+  margin-left: 0.3rem;
+}
+
+.badge-overflow {
+  overflow: hidden;
+  position: relative;
+  min-height: 3.86rem;
+  top: 0.75rem;
+}
+.badge-overflow__container {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 0;
+  transform: skewY(-5deg);
+  -webkit-animation: scroll-top 3s linear 1s infinite;
+          animation: scroll-top 3s linear 1s infinite;
+}
+.badge-overflow__item {
+  background-color: #e4efff;
+  color: #454545;
+  border: 1px solid #9dc6ff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  margin-right: 0.4rem;
+  margin-bottom: 0.4rem;
+  font-family: Nunito, sans-serif;
+  font-size: 0.8rem;
+}
+.badge-overflow__item:last-child {
+  margin-right: 0;
+}
+
+.upload-box {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.upload-box__field {
+  cursor: pointer;
+}
+.upload-box__field:hover {
+  background-color: #e4efff;
+  border-color: #9dc6ff;
+}
+.upload-box__item {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e5e9f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 9.5rem;
+  width: 8rem;
+}
+.upload-box__item .icon {
+  background-color: #f1fafc;
+  height: 3.125rem;
+  width: 3.125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+.checkbox-group .custom-checkbox {
+  margin-left: 1.25rem;
+}
+.checkbox-group .custom-checkbox:first-child {
+  margin-left: 0;
+}
+
+@media (min-width: 1200px) {
+  .nk-sidebar {
+    width: 18.75rem;
+  }
+  .nk-sidebar-widget {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+  .nk-wrap {
+    padding-left: 18.75rem !important;
+  }
+  .nk-header, .nk-footer {
+    left: 18.75rem !important;
+  }
+}
+.divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.divider div {
+  height: 1px;
+  width: 100%;
+  background-color: #e5e9f2;
+}
+.divider p {
+  position: absolute;
+  top: -0.9375rem;
+  background-color: white;
+  border: 1px solid #e5e9f2;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+}

@@ -4,7 +4,9 @@
   <meta charset="utf-8">
   <meta name="author" content="dipantau">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Fav Icon  -->
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+
   <!-- Page Title  -->
   <title>@yield('title', 'Dashboard')</title>
   <!-- StyleSheets  -->
@@ -13,7 +15,8 @@
   <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
 
   @yield('head')
-  {{-- @livewireStyles --}}
+  @stack('head')
+
 
 </head>
 <body class="nk-body bg-white has-sidebar">
@@ -43,7 +46,7 @@
         </div>
         <!-- content -->
 
-        <x-footer/>
+
       </div>
       <!-- wrap -->
     </div>
@@ -55,6 +58,7 @@
   <script src="{{ asset('vendor/dashlite/js/bundle.js') }}"></script>
   <script src="{{ asset('vendor/dashlite/js/scripts.js') }}"></script>
   @yield('script')
+  @stack('scripts')
 </body>
 
 </html>

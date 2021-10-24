@@ -6,7 +6,7 @@
   <div class="nk-sidebar-element nk-sidebar-head">
     <div class="nk-sidebar-brand">
       <a href="html/crypto/index.html" class="logo-link nk-sidebar-logo logo-text">
-        dipantau
+        🔎 🚙 <small class="text-primary">Pantau</small>
       </a>
     </div>
     <div class="nk-menu-trigger mr-n2">
@@ -112,7 +112,7 @@
         <div class="nk-sidebar-footer">
           <ul class="nk-menu nk-menu-footer">
             <li class="nk-menu-item">
-              <x-anchor text="Butuh bantuan?" to="{{ route('help') }}" icon="ni-help-alt"/>
+              <x-anchor text="Hubungi developer." to="{{ route('help') }}" icon="ni-help-alt"/>
             </li>
           </ul><!-- .nk-footer-menu -->
         </div><!-- .nk-sidebar-footer -->

@@ -17,6 +17,10 @@
   }
 }
 
+* {
+  font-family: Nunito,sans-serif;
+}
+
 .logo-text {
   font-size: 1.8rem !important;
   font-weight: 700;
@@ -119,13 +123,43 @@
   }
 }
 
-.form-control-number {
-  padding: .62rem 1.52rem !important;
-  height: 4rem !important;
+
+@media (min-width: 1200px) {
+  .nk {
+    &-sidebar {
+      width: 18.75rem;
+      &-widget {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+      }
+    }
+    &-wrap {
+      padding-left: 18.75rem !important;
+    }
+    &-header, &-footer {
+      left: 18.75rem !important;
+    }
+  }
 }
 
-textarea.form-control-number {
-  padding: .62rem 1.52rem !important;
-  min-height: 4rem !important;
-  font-size: 20px !important;
+.divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  div {
+    height: 1px;
+    width: 100%;
+    background-color: $light-gray;
+  }
+
+  p {
+    position: absolute;
+    top: -0.9375rem;
+    background-color: white;
+    border: 1px solid $light-gray;
+    padding: .2rem .5rem;
+    border-radius: 3px;
+  }
 }

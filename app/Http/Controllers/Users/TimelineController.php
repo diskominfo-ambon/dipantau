@@ -15,9 +15,14 @@ class TimelineController extends Controller
     public function index(Request $request)
     {
         $users = User::withoutCurrentUser()->get();
-        $marker_points = MarkerPoint::all();
+        $markerPoints = MarkerPoint::all();
+
         $reports = Report::latest()
-        // * Telusuri pencarian bedasarkan permintaan queries.
+        /**
+         * Telusuri [Report] bedasarkan masukan dari
+         * permintaan [query string].
+         *
+         */
             ->findQueryByEquals(
                 $request->only([
                     'user_id',
@@ -28,6 +33,6 @@ class TimelineController extends Controller
             ->limit(10)
             ->get();
 
-        return view('users.timelines.index', compact('reports', 'users', 'marker_points'));
+        return view('users.timelines.index', compact('reports', 'users', 'markerPoints'));
     }
 }

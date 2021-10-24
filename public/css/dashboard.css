@@ -11,17 +11,10 @@
   top: 10px;
 }
 
-@-webkit-keyframes scroll-top {
-  100% {
-    top: -160px;
-  }
+* {
+  font-family: Nunito, sans-serif;
 }
 
-@keyframes scroll-top {
-  100% {
-    top: -160px;
-  }
-}
 .logo-text {
   font-size: 1.8rem !important;
   font-weight: 700;
@@ -32,7 +25,7 @@
 .is-disabled::after {
   content: attr(data-disabled-text);
   font-size: 0.7rem;
-  background-color: #dbdfea;
+  background-color: #e5e9f2;
   padding: 0.2rem 0.8rem;
   border-radius: 5px;
   margin-left: 0.3rem;
@@ -66,6 +59,170 @@
 }
 .badge-overflow__item:last-child {
   margin-right: 0;
+}
+
+.upload-box {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.upload-box__field {
+  cursor: pointer;
+}
+.upload-box__field:hover {
+  background-color: #e4efff;
+  border-color: #9dc6ff;
+}
+.upload-box__item {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e5e9f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 9.5rem;
+  width: 8rem;
+}
+.upload-box__item .icon {
+  background-color: #f1fafc;
+  height: 3.125rem;
+  width: 3.125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+.checkbox-group .custom-checkbox {
+  margin-left: 1.25rem;
+}
+.checkbox-group .custom-checkbox:first-child {
+  margin-left: 0;
+}
+
+@media (min-width: 1200px) {
+  .nk-sidebar {
+    width: 18.75rem;
+  }
+  .nk-sidebar-widget {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+  .nk-wrap {
+    padding-left: 18.75rem !important;
+  }
+  .nk-header, .nk-footer {
+    left: 18.75rem !important;
+  }
+}
+.divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.divider div {
+  height: 1px;
+  width: 100%;
+  background-color: #e5e9f2;
+}
+.divider p {
+  position: absolute;
+  top: -0.9375rem;
+  background-color: white;
+  border: 1px solid #e5e9f2;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+}
+
+@-webkit-keyframes scroll-top {
+  100% {
+    top: -160px;
+  }
+}
+
+@keyframes scroll-top {
+  100% {
+    top: -160px;
+  }
+}
+.user-avatar {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.user-subname {
+  color: gray;
+  font-weight: 500;
+}
+.user-profile p {
+  color: #454545;
+  margin: 0;
+  font-family: Nunito, sans-serif;
+  font-weight: 600;
+}
+.user-profile time {
+  color: gray;
+  font-size: 0.8rem;
+  position: relative;
+  top: -0.2rem;
+}
+
+.post__report {
+  padding-top: 0.8rem;
+}
+.post__report:last-child {
+  border-bottom: none;
+}
+.post__report:first-child {
+  border-bottom: 1px solid #e5e9f2;
+  padding: 0;
+}
+.post__report-header {
+  display: flex;
+  align-items: center;
+}
+.post__report-header > .user-profile {
+  margin-left: 0.6rem;
+}
+.post__report-bars {
+  list-style: none;
+  margin-top: 1rem;
+  padding: 0.5rem 0;
+}
+.post__report-bars li {
+  display: inline-block !important;
+}
+.post__report-bars li:last-child {
+  margin-left: 0.9rem;
+}
+.post__header .title {
+  font-size: 1rem;
+  font-family: Nunito, sans-serif;
+  font-weight: 600;
+}
+.post__header .title span, .post__header .title time {
+  font-weight: 500;
+}
+.post__header .subtitle {
+  font-size: 0.8rem;
+  color: #e5e9f2;
+  font-family: Nunito, sans-serif;
+  font-weight: 600;
+}
+
+.form-select-borderless ~ .select2-container > span.selection > span.select2-selection--single {
+  border: none !important;
+}
+
+.d-checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
 }
 
 .nk-wgw-subtitle {
@@ -105,54 +262,6 @@
   font-weight: 600;
 }
 
-.form-control-number {
-  padding: 0.62rem 1.52rem !important;
-  height: 4rem !important;
-}
-
-textarea.form-control-number {
-  padding: 0.62rem 1.52rem !important;
-  min-height: 4rem !important;
-  font-size: 20px !important;
-}
-
-.upload-box {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.upload-box__field {
-  cursor: pointer;
-}
-.upload-box__field:hover {
-  background-color: #e4efff;
-  border-color: #9dc6ff;
-}
-.upload-box__item {
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #dbdfea;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 9.5rem;
-  width: 8rem;
-}
-.upload-box__item .icon {
-  background-color: #f1fafc;
-  height: 3.125rem;
-  width: 3.125rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  font-size: 1.5rem;
-}
-
 .list-report-times__item {
   display: flex;
   align-items: center;
@@ -166,78 +275,4 @@ textarea.form-control-number {
 .list-report-times__item .badge-sm {
   padding: 0.2rem 0.8rem;
   font-size: 0.8rem;
-}
-
-.checkbox-group .custom-checkbox {
-  margin-left: 1.25rem;
-}
-.checkbox-group .custom-checkbox:first-child {
-  margin-left: 0;
-}
-
-.form-select-borderless ~ .select2-container > span.selection > span.select2-selection--single {
-  border: none !important;
-}
-
-.post__report {
-  padding-top: 0.8rem;
-}
-.post__report:last-child {
-  border-bottom: none;
-}
-.post__report:first-child {
-  border-bottom: 1px solid #dbdfea;
-  padding: 0;
-}
-.post__report-header {
-  display: flex;
-  align-items: center;
-}
-.post__report-header > .user-profile {
-  margin-left: 0.6rem;
-}
-.post__report-bars {
-  list-style: none;
-  margin-top: 1rem;
-  padding: 0.5rem 0;
-}
-.post__report-bars li {
-  display: inline-block !important;
-}
-.post__report-bars li:last-child {
-  margin-left: 0.9rem;
-}
-.post__header .title {
-  font-size: 1rem;
-  font-family: Nunito, sans-serif;
-  font-weight: 600;
-}
-.post__header .title span, .post__header .title time {
-  font-weight: 500;
-}
-.post__header .subtitle {
-  font-size: 0.8rem;
-  color: #dbdfea;
-  font-family: Nunito, sans-serif;
-  font-weight: 600;
-}
-.user-avatar {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.user-subname {
-  color: gray;
-  font-weight: 500;
-}
-.user-profile p {
-  color: #454545;
-  margin: 0;
-  font-family: Nunito, sans-serif;
-  font-weight: 600;
-}
-.user-profile time {
-  color: gray;
-  font-size: 0.8rem;
-  position: relative;
-  top: -0.2rem;
 }

@@ -55,7 +55,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function scopeWithoutCurrentUser(Builder $builder): Builder
     {
-        return $builder->where('id', '!=',Auth::user()->id);
+        return $builder->where('id', '!=', Auth::user()->id);
     }
 
 

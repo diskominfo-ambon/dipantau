@@ -11,11 +11,9 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/javascript/packs/reports/*.js', 'public/js/packs/reports')
+mix.js('resources/js/*/*.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
-    .sass('resources/sass/dashboard.scss', 'public/css')
-    .vue()
-    .sourceMaps();
+    .sass('resources/sass/dashboard.scss', 'public/css');
 
 mix.babelConfig({
     plugins: ['@babel/plugin-syntax-dynamic-import'],
@@ -24,7 +22,7 @@ mix.babelConfig({
 mix.webpackConfig({
     resolve: {
         alias: {
-            '~': `${__dirname}/resources/javascript`
+            '~': `${__dirname}/resources/js`
         }
     }
 });

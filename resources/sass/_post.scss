@@ -84,10 +84,6 @@
     }
 
   }
-
-  &__downloader {
-
-  }
 }
 
 
@@ -95,6 +91,16 @@
   &-select {
     &-borderless ~ .select2-container  > span.selection > span.select2-selection--single {
       border: none !important;
+    }
+  }
+}
+
+.d {
+  &-checkbox {
+    &-group {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 10px;
     }
   }
 }

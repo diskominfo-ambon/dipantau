@@ -11,8 +11,9 @@ class CreatedPage extends Component
     /** @var array<int> */
     public array $categories;
 
-    /** @var array<int> */
-    public array $attachments;
+    public $attachment;
+
+    public string $description = '';
 
     protected $rules = [
         /**
@@ -22,11 +23,12 @@ class CreatedPage extends Component
         'categories' => 'required|array',
         'categories.*' => 'numeric',
         'attachments' => 'required|array',
-        'attachments.*' => 'numeric'
+        'attachments.*' => 'numeric',
     ];
 
     public function submited()
     {
+        dd($this->all());
         $this->validate();
 
         return redirect()

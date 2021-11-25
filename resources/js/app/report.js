@@ -12,29 +12,42 @@ FilePond.registerPlugin(
 document.addEventListener('DOMContentLoaded', () => {
   const $filepond = document.querySelector('.my-pond');
 
+  FilePond.create($filepond);
+
+  // Mengatur konfigurasi label bahasa.
+  FilePond.setOptions(id);
 
   FilePond.setOptions({
-    ...id,
     allowMultiple: true,
+    instantUpload: true,
     maxFileSize: '2MB',
-    maxParallelUploads: true,
     acceptedFileTypes: ['application/pdf'],
     fileValidateTypeLabelExpectedTypes: 'File memiliki format yang tidak diperbolehkan',
-    required: true,
+    onaddfile() {
+      console.log('on add');
+    },
+    onprocessfile() {
+      console.log('proccess file');
+    },
     server: {
-      url: '',
-      process: {
-        url: '',
-        method: 'POST',
-        headers: {
-          'X-CSRF-TOKEN': document
-            .querySelector('meta[name="csrf-token"]')
-            .getAttribute('content'),
-        }
+      url: window.location.origin + '/attachments',
+      headers: {
+        'X-CSRF-TOKEN': document
+          .querySelector('meta[name="csrf-token"]')
+          .getAttribute('content'),
       }
     }
 
   });
-
-  FilePond.create($filepond);
 });
+
+
+function onloaded(res) {
+  console.log({res});
+  console.log('onload');
+  return res.key;
+}
+
+function onerror() {
+  console.log('error');
+}

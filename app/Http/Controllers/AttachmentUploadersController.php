@@ -10,45 +10,31 @@ use App\Models\Attachment;
 
 class AttachmentUploadersController extends Controller
 {
-    public function store(Request $request)
+    public function store(Request $request): string|int
     {
         $request->validate([
-            'attachment' => 'required|file|mimes:pdf'
+            'files' => 'required|array|min:1',
+            'files.*' => 'required|file|mimes:pdf|mimetypes:application/pdf|size:2000'
         ]);
 
-        $file = $request->file('attachment');
-        $path = $file->storeAs('reports', ['disk' => 'public']);
+        $file = $request->file('files')[0];
+        $path = $file->store('reports', ['disk' => 'public']);
         $body = [
             'original_filename' => $file->getClientOriginalName(),
             'filename' => Str::of($path)->split('/\//')->last(),
             'path' => $path,
             'content_type' => $file->getMimeType(),
-            'byte_size' => $file->getMimeType()
+            'byte_size' => $file->getSize()
         ];
 
         $attachment = Attachment::create($body);
 
-        return new JsonResponse(
-            [
-                'message' => 'Successfully',
-                'data' => compact('attachment'),
-                'status' => true,
-                'code' => 201
-            ],
-            201,
-            json: true
-        );
-
+        return $attachment->id;
     }
 
-    public function destroy(int $id)
+    public function destroy(int $id): JsonResponse
     {
         $attachment = Attachment::findOrFail($id);
-
-        if (Storage::exists($attachment->path)) {
-            Storage::delete($attachment->path);
-        }
-
         $attachment->delete();
 
         return new JsonResponse(
@@ -57,8 +43,7 @@ class AttachmentUploadersController extends Controller
                 'code' => 200,
                 'status' => true
             ],
-            200,
-            json: true
+            200
         );
     }
 }

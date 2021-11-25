@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\ProfilesController;
+use App\Http\Controllers\AttachmentUploadersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,8 +32,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('/user', [ProfilesController::class, 'update'])
         ->name('profile.update');
 
-    Route::post('/attachments', [AttachmentUploadersController::class, 'store'])
-        ->name('attachments.store');
-    Route::delete('/attachments', [AttachmentUploadersController::class, 'destroy'])
-        ->name('attachments.destroy');
+    Route::resource('attachments', AttachmentUploadersController::class)
+        ->only(['store', 'destroy']);
+
 });

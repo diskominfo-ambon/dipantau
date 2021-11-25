@@ -5,7 +5,7 @@
   'size' => 'sm'
 ])
 
-<select class="form-select" data-ui="{{ $size }}" {{ $searchable ? 'data-search=on' : '' }} {{ $multiple ? 'multiple' : '' }}>
+<select {{ $attributes->merge(['class' => 'form-select']) }} data-ui="{{ $size }}" {{ $searchable ? 'data-search=on' : '' }} {{ $multiple ? 'multiple' : '' }}>
   <option value="halo">Halo</option>
   <option value="halo-dunia">Halo Dunia</option>
 </select>

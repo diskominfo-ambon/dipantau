@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 class Report extends Model
 {
@@ -18,15 +19,22 @@ class Report extends Model
         'is_active' => 'boolean'
     ];
 
-
     public function scopeFindQueryByEquals(Builder $builder, array $fields): Builder
     {
         return $builder
             ->where(function (Builder $builder) use ($fields) {
                 foreach ($fields as $key => $value) {
-                    Str::of($value)->trim()->isNotEmpty()
-                        && $builder->where($key, 'like', "%{$value}%");
+
+                    $builder->when(
+                        Str::of($value)->trim()->isNotEmpty(),
+                        fn () => $builder->where($key, 'like', "%{$value}%")
+                    );
                 }
             });
+    }
+
+    public function attachments(): MorphToMany
+    {
+        return $this->morphToMany(Attachment::class, 'record');
     }
 }

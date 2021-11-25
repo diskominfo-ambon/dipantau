@@ -1,4 +1,4 @@
-<textarea class="form-control tinymce-toolbar"></textarea>
+<textarea {{ $attributes->merge(['class' => 'form-control tinymce-toolbar']) }}></textarea>
 
 
 @push('head')
@@ -12,7 +12,7 @@
     tinymce.init({
       selector: '.tinymce-toolbar',
       content_css: true,
-      skin: true,
+      skin: false,
       branding: false,
       menubar: false
     });

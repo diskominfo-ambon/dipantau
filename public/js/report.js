@@ -17,12 +17,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var filepond_plugin_file_validate_type__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(filepond_plugin_file_validate_type__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var filepond_plugin_file_validate_size__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! filepond-plugin-file-validate-size */ "./node_modules/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js");
 /* harmony import */ var filepond_plugin_file_validate_size__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(filepond_plugin_file_validate_size__WEBPACK_IMPORTED_MODULE_4__);
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -31,26 +25,41 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 filepond__WEBPACK_IMPORTED_MODULE_0__.registerPlugin((filepond_plugin_file_validate_size__WEBPACK_IMPORTED_MODULE_4___default()), (filepond_plugin_file_validate_type__WEBPACK_IMPORTED_MODULE_3___default()));
 document.addEventListener('DOMContentLoaded', function () {
   var $filepond = document.querySelector('.my-pond');
-  filepond__WEBPACK_IMPORTED_MODULE_0__.setOptions(_objectSpread(_objectSpread({}, filepond_locale_id_id__WEBPACK_IMPORTED_MODULE_1__["default"]), {}, {
+  filepond__WEBPACK_IMPORTED_MODULE_0__.create($filepond); // Mengatur konfigurasi label bahasa.
+
+  filepond__WEBPACK_IMPORTED_MODULE_0__.setOptions(filepond_locale_id_id__WEBPACK_IMPORTED_MODULE_1__["default"]);
+  filepond__WEBPACK_IMPORTED_MODULE_0__.setOptions({
     allowMultiple: true,
+    instantUpload: true,
     maxFileSize: '2MB',
-    maxParallelUploads: true,
     acceptedFileTypes: ['application/pdf'],
     fileValidateTypeLabelExpectedTypes: 'File memiliki format yang tidak diperbolehkan',
-    required: true,
+    onaddfile: function onaddfile() {
+      console.log('on add');
+    },
+    onprocessfile: function onprocessfile() {
+      console.log('proccess file');
+    },
     server: {
-      url: '',
-      process: {
-        url: '',
-        method: 'POST',
-        headers: {
-          'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-        }
+      url: window.location.origin + '/attachments',
+      headers: {
+        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
       }
     }
-  }));
-  filepond__WEBPACK_IMPORTED_MODULE_0__.create($filepond);
+  });
 });
+
+function onloaded(res) {
+  console.log({
+    res: res
+  });
+  console.log('onload');
+  return res.key;
+}
+
+function onerror() {
+  console.log('error');
+}
 
 /***/ }),
 

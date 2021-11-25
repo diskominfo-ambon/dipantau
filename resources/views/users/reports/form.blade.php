@@ -1,6 +1,6 @@
 <div>
   <x-form-group label="Pilih lokasi pemantuan">
-    <x-inputs.select searchable size="lg" :items="[]"/>
+    <x-inputs.select name="point" searchable size="lg" :items="[]"/>
     <div class="form-note-group">
       <span class="form-note-alt">
         Pilih salah satu lokasi pemantuan laporan saat ini.
@@ -9,7 +9,7 @@
   </x-form-group>
 
   <x-form-group label="Kategori">
-    <x-inputs.select searchable multiple size="lg" :items="[]"/>
+    <x-inputs.select name="categories[]" searchable multiple size="lg" :items="[]"/>
     <div class="form-note-group mt-3">
       <span class="form-note-alt">
         Pilih kategori yang sesuai dengan kondisi laporan pemantuan kamu saat ini.
@@ -18,7 +18,7 @@
   </x-form-group>
 
   <x-form-group label="Deskripsi pesan">
-    <x-inputs.textarea/>
+    <x-inputs.textarea name="description"/>
     <div class="form-note-group">
       <span class="form-note-alt">
         Masukan informasi deskripsi mengenai pemantauan (masalah & solusi).
@@ -37,15 +37,15 @@
       <span class="d-block ml-1 fs-13px">Baca aturan jika berkas saya melebihi kapasitas ukuran <a href="#">disini</a>.</span>
     </div>
     <!-- FilePond Instance -->
-    <input type="file" name="file" class="my-pond"/>
+    <input type="file" name="files[]" class="my-pond"/>
   </x-form-group>
 </div>
 
 
-@section('head')
+@push('head')
 <link rel="stylesheet" href="https://unpkg.com/filepond/dist/filepond.min.css"/>
-@endsection
+@endpush
 
-@section('script')
+@push('scripts')
 <script src="{{ asset('js/report.js') }}"></script>
-@endsection
+@endpush

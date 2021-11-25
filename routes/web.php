@@ -30,4 +30,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::put('/user', [ProfilesController::class, 'update'])
         ->name('profile.update');
+
+    Route::post('/attachments', [AttachmentUploadersController::class, 'store'])
+        ->name('attachments.store');
+    Route::delete('/attachments', [AttachmentUploadersController::class, 'destroy'])
+        ->name('attachments.destroy');
 });

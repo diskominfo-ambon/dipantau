@@ -9,6 +9,7 @@ use App\Http\Controllers\Users\TimelineController;
 use App\Http\Controllers\Users\ProfileReportController;
 use App\Http\Livewire\Report\CreatedPage;
 use App\Http\Livewire\Report\EditedPage;
+use App\Http\Livewire\Report\GraphFormPage;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,7 @@ Route::prefix('u')->name('users.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])
         ->name('dashboard');
 
-    Route::get('/{name}-{id}/laporan', [ProfileReportController::class, 'index'])
+    Route::get('/{user:name}-{user:id}/laporan', [ProfileReportController::class, 'index'])
         ->name('profiles.report');
 
     Route::resource('todos', TodosController::class);
@@ -33,6 +34,8 @@ Route::prefix('u')->name('users.')->group(function () {
             ->name('create');
         Route::get('/ubah', EditedPage::class)
             ->name('edit');
+        Route::get('/{user:name}-{user:id}/grafik', GraphFormPage::class)
+            ->name('graph');
     });
 
 

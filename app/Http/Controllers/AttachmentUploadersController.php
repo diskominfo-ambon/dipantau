@@ -14,7 +14,7 @@ class AttachmentUploadersController extends Controller
     {
         $request->validate([
             'files' => 'required|array|min:1',
-            'files.*' => 'required|file|mimes:pdf|mimetypes:application/pdf|size:2000'
+            'files.*' => 'required|file|mimes:pdf|mimetypes:application/pdf|size:20000'
         ]);
 
         $file = $request->file('files')[0];

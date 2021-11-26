@@ -7,7 +7,7 @@ use App\Models\User;
 
 trait WithCurrentUser
 {
-    protected User $currentUser;
+    protected $currentUser;
 
     public function __construct()
     {

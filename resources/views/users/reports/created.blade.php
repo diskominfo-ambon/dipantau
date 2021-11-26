@@ -11,7 +11,7 @@
     <div class="mt-5">
       <form method="POST" action="{{ route('users.reports.store') }}" enctype="multipart/form-data">
         @csrf
-        @include('users.reports.form')
+        @include('users.reports.form', compact('categories', 'markers'))
 
         <button class="btn btn-lg btn-primary">Selanjutnya <em class="ml-1 icon ni ni-arrow-right-c"></em></button>
       </form>

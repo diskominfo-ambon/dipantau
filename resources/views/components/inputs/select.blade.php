@@ -6,6 +6,7 @@
 ])
 
 <select {{ $attributes->merge(['class' => 'form-select']) }} data-ui="{{ $size }}" {{ $searchable ? 'data-search=on' : '' }} {{ $multiple ? 'multiple' : '' }}>
-  <option value="halo">Halo</option>
-  <option value="halo-dunia">Halo Dunia</option>
+  @foreach ($items as $item)
+    <option value="{{ $item->id }}">{{ strtoupper($item->name) }}</option>
+  @endforeach
 </select>

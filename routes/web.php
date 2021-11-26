@@ -31,7 +31,6 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::put('/user', [ProfilesController::class, 'update'])
         ->name('profile.update');
-
     Route::resource('attachments', AttachmentUploadersController::class)
         ->only(['store', 'destroy']);
 

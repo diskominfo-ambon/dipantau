@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\ReportRequest;
 use App\Http\Controllers\Concerns\WithCurrentUser;
+use App\Models\Category;
+use App\Models\MarkerPoint;
 
 class ReportsController extends Controller
 {
@@ -18,7 +20,11 @@ class ReportsController extends Controller
      */
     public function create()
     {
-        return view('users.reports.created');
+        $categories = Category::all();
+        /** [MarkerPoint] untuk menyimpan titik tanda alamat lokasi pemantuan. */
+        $markers = MarkerPoint::all();
+
+        return view('users.reports.created', compact('categories', 'markers'));
     }
 
     /**

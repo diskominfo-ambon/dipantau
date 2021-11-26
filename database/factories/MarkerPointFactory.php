@@ -23,8 +23,8 @@ class MarkerPointFactory extends Factory
     {
         return [
             'name' => 'Pemantuan CCTV '. $this->faker->streetAddress(),
-            'lat' => $this->faker->lat(),
-            'lang' => $this->faker->lang()
+            'lat' => $this->faker->latitude(),
+            'lang' => $this->faker->longitude()
         ];
     }
 }

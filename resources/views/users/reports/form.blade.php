@@ -1,6 +1,6 @@
 <div>
   <x-form-group label="Pilih lokasi pemantuan">
-    <x-inputs.select name="point" searchable size="lg" :items="[]"/>
+    <x-inputs.select name="point" searchable size="lg" :items="$markers"/>
     <div class="form-note-group">
       <span class="form-note-alt">
         Pilih salah satu lokasi pemantuan laporan saat ini.
@@ -9,7 +9,7 @@
   </x-form-group>
 
   <x-form-group label="Kategori">
-    <x-inputs.select name="categories[]" searchable multiple size="lg" :items="[]"/>
+    <x-inputs.select name="categories[]" searchable multiple size="lg" :items="$categories"/>
     <div class="form-note-group mt-3">
       <span class="form-note-alt">
         Pilih kategori yang sesuai dengan kondisi laporan pemantuan kamu saat ini.

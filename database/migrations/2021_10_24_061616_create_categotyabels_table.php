@@ -13,10 +13,11 @@ class CreateCategotyabelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('categotyabels', function (Blueprint $table) {
+        Schema::create('categotiabels', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('categoryable_id');
-            $table->string('categoryable_type');
+            $table->foreignId('category_id');
+            $table->unsignedBigInteger('categorizable_id');
+            $table->string('categorizable_type');
             $table->timestamps();
         });
     }

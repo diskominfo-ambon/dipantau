@@ -19,6 +19,8 @@ class Report extends Model
         'is_active' => 'boolean'
     ];
 
+    protected $with = ['attachments', 'categories'];
+
     public function scopeFindQueryByEquals(Builder $builder, array $fields): Builder
     {
         return $builder
@@ -36,5 +38,10 @@ class Report extends Model
     public function attachments(): MorphToMany
     {
         return $this->morphToMany(Attachment::class, 'record');
+    }
+
+    public function categories(): MorphToMany
+    {
+        return $this->morphToMany(Category::class, 'categorizable');
     }
 }

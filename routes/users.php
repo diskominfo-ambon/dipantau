@@ -8,6 +8,7 @@ use App\Http\Controllers\Users\TodosController;
 use App\Http\Controllers\Users\TimelineController;
 use App\Http\Controllers\Users\ProfileReportController;
 use App\Http\Controllers\Users\ReportsController;
+use App\Http\Controllers\Users\ReportGraphController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +42,13 @@ Route::prefix('u')->name('users.')->group(function () {
         Route::delete('/hapus', [ReportsController::class, 'destroy'])
             ->name('destroy');
 
-        // Route::get('/{report:slug}/grafik', GraphFormPage::class)
-        //     ->name('graph');
+        Route::get('/{report:slug}/grafik', [ReportGraphController::class, 'create'])
+            ->name('graph');
+
+        Route::post('/{report:slug}/grafik', [ReportGraphController::class, 'store'])
+            ->name('graph.store');
+
+        Route::put('/{report:slug}/grafik', [ReportGraphController::class, 'update'])
+            ->name('graph.update');
     });
 });

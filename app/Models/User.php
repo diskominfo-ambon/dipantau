@@ -55,12 +55,11 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function scopeWithoutCurrentUser(Builder $builder): Builder
     {
-        return $builder->where('id', '!=', Auth::user()->id);
-    }
+        $currentUser = Auth::user();
 
-
-    public function reports(): HasMany
-    {
-        return $this->hasMany(Report::class);
+        return $builder->when(
+            !is_null($currentUser),
+            fn () => $builder->where('id', '!=', $currentUser->id)
+        );
     }
 }

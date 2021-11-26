@@ -8,9 +8,6 @@ use App\Http\Controllers\Users\TodosController;
 use App\Http\Controllers\Users\TimelineController;
 use App\Http\Controllers\Users\ProfileReportController;
 use App\Http\Controllers\Users\ReportsController;
-use App\Http\Livewire\Report\CreatedPage;
-use App\Http\Livewire\Report\EditedPage;
-use App\Http\Livewire\Report\GraphFormPage;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +41,7 @@ Route::prefix('u')->name('users.')->group(function () {
         Route::delete('/hapus', [ReportsController::class, 'destroy'])
             ->name('destroy');
 
-        Route::get('/{report:slug}/grafik', GraphFormPage::class)
-            ->name('graph');
+        // Route::get('/{report:slug}/grafik', GraphFormPage::class)
+        //     ->name('graph');
     });
 });

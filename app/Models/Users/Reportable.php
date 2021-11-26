@@ -12,9 +12,4 @@ trait Reportable
     {
         return $this->hasMany(Report::class);
     }
-
-    public function scopeFindReportOfWeeks(Builder $builder): Builder
-    {
-        return $builder;
-    }
 }

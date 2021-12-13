@@ -26,8 +26,7 @@ class ReportRequest extends FormRequest
         return [
             'description' => 'required|min:20',
             'marker_point_id' => 'required|numeric',
-            'categories' => 'required|array|min:1',
-            'categories.*' => 'required|numeric',
+            'category' => 'required|numeric',
             'files' => 'required|array|min:1',
             'files.*' => 'required|numeric'
         ];
@@ -39,7 +38,7 @@ class ReportRequest extends FormRequest
         return [
             'description' => 'Deskripsi pesan',
             'marker_point_id' => 'Lokasi pemantuan',
-            'categories' => 'Kategori',
+            'category' => 'Kategori',
             'files' => 'Berkas'
         ];
     }

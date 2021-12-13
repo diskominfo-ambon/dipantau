@@ -36,16 +36,22 @@ class ReportsController extends Controller
     public function store(ReportRequest $request)
     {
         $body = $request->validationData();
+
+        $this->authorize('create', (object) ['model' => Report::class, 'body' => $body]);
+
         $report = $this->currentUser
             ->reports()
-            ->create($body);
+            ->updateOrCreate(
+                $body,
+                []
+            );
 
         /**
          * Menautkan beberapa bidang [Category] && [Attachment] ke [Report] melalu foerign key.
          */
-        list($categories, $files) = $request->only(['categories', 'files']);
+        list($category, $files) = $request->only(['category', 'files']);
 
-        $report->categories()->attach($categories);
+        $report->categories()->attach([$category]);
         $report->attachments()->attach($files);
 
         return redirect()

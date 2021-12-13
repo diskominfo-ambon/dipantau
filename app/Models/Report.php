@@ -20,6 +20,24 @@ class Report extends Model
 
     protected $with = ['attachments', 'categories'];
 
+
+    protected static function boot()
+    {
+        self::creating(function (Report $report) {
+            $report->slug = Str::of($report->title)->slug() .''. Str::random(10);
+        });
+    }
+
+    public function scopeFindBySlug(Builder $builder, string $slug): Builder
+    {
+        return $builder
+            ->when(
+                Str::of($slug)->trim()->isNotEmpty(),
+                fn (Builder $builder) => $builder->whereSlug($slug)
+            );
+
+    }
+
     public function scopeFindQueryByEquals(Builder $builder, array $fields): Builder
     {
         return $builder
